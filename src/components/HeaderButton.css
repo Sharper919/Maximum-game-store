@@ -1,0 +1,20 @@
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 40px;
+  font-size: 30px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  height: 70px;
+  width: 156px;
+}
+
+.btn.default {
+  background-color: gray;
+  color: black;
+}
+
+.btn.primary {
+  background-color: #00e5ff;
+  color: black;
+}
