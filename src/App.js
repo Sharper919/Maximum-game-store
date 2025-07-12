@@ -1,9 +1,18 @@
 import './App.css';
 import Header from './components/Header';
+import banner from './components/igri.jpeg';
 
 function App() {
   return (
-    <Header/>
+    <div className='App'>
+      <Header/>
+      <img src={banner} alt="Games" className="banner-image" />
+
+      <div className="games-section">
+        <h2 className="section-title">Games</h2>
+        <hr className="section-line" />
+      </div>
+    </div>
   );
 }
 

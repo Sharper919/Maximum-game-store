@@ -1,4 +1,4 @@
-.App {
+/*.App {
   text-align: center;
 }
 
@@ -35,4 +35,42 @@
   to {
     transform: rotate(360deg);
   }
+}*/
+
+/*My styles*/
+
+.App {
+  background-color: black;
+  color: white;
+}
+
+/*.game-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  color: white;
+}*/
+
+.banner-image {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-height: 1000px;
+  object-fit: cover;
+}
+
+.games-section {
+  text-align: left;
+  padding: 20px;
+}
+
+.section-title {
+  font-size: 100px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.section-line {
+  border: 1px solid white;
 }

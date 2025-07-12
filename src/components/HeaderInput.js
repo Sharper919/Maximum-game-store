@@ -1,6 +1,6 @@
 import React from 'react';
 import './HeaderInput.css';
-import loupe from './loupe.png';
+//import loupe from './loupe.png';
 
 
 const HeaderInput = () => {
@@ -8,7 +8,7 @@ const HeaderInput = () => {
     <div className="search-input">
       <input type="text" placeholder="Search..." />
       <button type="button">
-        <img src={loupe} alt="Search" />
+        🔍
       </button>
     </div>
   );
