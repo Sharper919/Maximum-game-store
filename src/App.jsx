@@ -1,5 +1,6 @@
 import './App.css';
 import Header from './components/Header';
+import GameComponent from './components/GameComponent'
 import banner from './components/igri.jpeg';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <h2 className="section-title">Games</h2>
         <hr className="section-line" />
       </div>
+      <GameComponent />
     </div>
   );
 }

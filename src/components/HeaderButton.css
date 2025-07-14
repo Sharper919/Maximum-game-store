@@ -3,6 +3,7 @@
   border: none;
   border-radius: 40px;
   font-size: 30px;
+  font-weight: 400;
   cursor: pointer;
   transition: background 0.2s ease;
   height: 70px;

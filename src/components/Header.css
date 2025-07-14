@@ -5,6 +5,7 @@
   background-color: black;
   color: white;
   padding: 10px 20px;
+  /*position: fixed;*/
 }
 
 .left-section {
@@ -15,7 +16,7 @@
 
 .store-name {
   font-size: 50px;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .maximum-game-img {

@@ -1,4 +1,4 @@
-.search-input {
+/*.search-input {
   display: flex;
   background-color: #e0e0e0;
   border-radius: 20px;
@@ -22,17 +22,17 @@
   padding: 8px;
   height: 100px;
   width: 100px;
-}
+}*/
 
-/*.search-input {
+.search-input {
   display: flex;
   align-items: center;
   background-color: #e0e0e0;
-  border-radius: 20px;
+  border-radius: 30px;
   overflow: hidden;
   padding: 2px;
-  width: 509px;
-  height: 50px;
+  width: 609px;
+  height: 60px;
 }
 
 .search-input input {
@@ -40,8 +40,8 @@
   background: transparent;
   padding: 8px 12px;
   outline: none;
-  font-size: 14px;
-  width: 200px;
+  font-size: 30px;
+  width: 609px;
   color: #000;
 }
 
@@ -55,7 +55,7 @@
 }
 
 .search-input button img {
-  width: 18px;
-  height: 18px;
+  width: 40px;
+  height: 40px;
   object-fit: contain;
-}*/
+}
