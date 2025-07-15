@@ -2,6 +2,7 @@ import './App.css';
 import Header from './components/Header';
 import GameComponent from './components/GameComponent'
 import banner from './components/igri.jpeg';
+import assassin from './images/assassin.avif'
 
 function App() {
   return (
@@ -13,7 +14,17 @@ function App() {
         <h2 className="section-title">Games</h2>
         <hr className="section-line" />
       </div>
-      <GameComponent />
+      <div className="games-list">
+        <GameComponent image={assassin} gameName='Assassin’s Creed Shadows' gamePrice='UAH 1,999'/>
+        <GameComponent image={assassin} gameName='Assassin’s Creed Shadows' gamePrice='UAH 1,999'/>
+        <GameComponent image={assassin} gameName='Assassin’s Creed Shadows' gamePrice='UAH 1,999'/>
+        <GameComponent image={assassin} gameName='Assassin’s Creed Shadows' gamePrice='UAH 1,999'/>
+        <GameComponent image={assassin} gameName='Assassin’s Creed Shadows' gamePrice='UAH 1,999'/>
+        <GameComponent image={assassin} gameName='Assassin’s Creed Shadows' gamePrice='UAH 1,999'/>
+        <GameComponent image={assassin} gameName='Assassin’s Creed Shadows' gamePrice='UAH 1,999'/>
+        <GameComponent image={assassin} gameName='Assassin’s Creed Shadows' gamePrice='UAH 1,999'/>
+        <GameComponent image={assassin} gameName='Assassin’s Creed Shadows' gamePrice='UAH 1,999'/>
+      </div>
     </div>
   );
 }
