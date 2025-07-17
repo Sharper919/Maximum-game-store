@@ -2,12 +2,10 @@
     display: flex;
     width: 500px;
     height: 1000px;
-    margin: 40px;
     border-radius: 50px;
     flex-direction: column;
     justify-content: start;
     align-items: start;
-
 }
 
 .game-image {
