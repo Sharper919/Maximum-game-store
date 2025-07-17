@@ -1,6 +1,5 @@
 import React from 'react';
 import './GameComponent.css';
-//import assassin from '../images/assassin.avif'
 
 class GameComponent extends React.Component {
     render() {
