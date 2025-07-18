@@ -34,7 +34,7 @@ function App() {
         <h2 className="section-title">Games</h2>
         <hr className="section-line" />
       </div>
-      <div className="games-grid">
+      <div className="games-list">
             {games.map(game => (
                 <GameComponent
                     image={game.image}
@@ -42,17 +42,6 @@ function App() {
                     gamePrice={game.gamePrice}
                 />
             ))}
-      </div>
-      <div className="games-list">
-        <GameComponent image={assassin} gameName='Assassin’s Creed Shadows' gamePrice='UAH 1,999'/>
-        <GameComponent image={assassin} gameName='Assassin’s Creed Shadows' gamePrice='UAH 1,999'/>
-        <GameComponent image={assassin} gameName='Assassin’s Creed Shadows' gamePrice='UAH 1,999'/>
-        <GameComponent image={assassin} gameName='Assassin’s Creed Shadows' gamePrice='UAH 1,999'/>
-        <GameComponent image={assassin} gameName='Assassin’s Creed Shadows' gamePrice='UAH 1,999'/>
-        <GameComponent image={assassin} gameName='Assassin’s Creed Shadows' gamePrice='UAH 1,999'/>
-        <GameComponent image={assassin} gameName='Assassin’s Creed Shadows' gamePrice='UAH 1,999'/>
-        <GameComponent image={assassin} gameName='Assassin’s Creed Shadows' gamePrice='UAH 1,999'/>
-        <GameComponent image={assassin} gameName='Assassin’s Creed Shadows' gamePrice='UAH 1,999'/>
       </div>
     </div>
   );

@@ -6,6 +6,7 @@
     flex-direction: column;
     justify-content: start;
     align-items: start;
+    margin: 40px 100px;
 }
 
 .game-image {
