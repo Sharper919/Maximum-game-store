@@ -5,7 +5,7 @@ import loupe from './loupe.png';
 
 const HeaderInput = () => {
   return (
-    <div className="search-input">
+    <div id="search-input">
       <input type="text" placeholder="Search..." />
       <button type="button">
         <img src={loupe} alt="" />

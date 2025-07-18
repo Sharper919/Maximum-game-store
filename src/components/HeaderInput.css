@@ -1,4 +1,4 @@
-.search-input {
+#search-input {
   display: flex;
   align-items: center;
   background-color: #e0e0e0;
@@ -9,7 +9,7 @@
   height: 60px;
 }
 
-.search-input input {
+#search-input input {
   border: none;
   background: transparent;
   padding: 8px 12px;
@@ -19,7 +19,7 @@
   color: #000;
 }
 
-.search-input button {
+#search-input button {
   background: none;
   border: none;
   padding: 6px 10px;
@@ -28,7 +28,7 @@
   align-items: center;
 }
 
-.search-input button img {
+#search-input button img {
   width: 40px;
   height: 40px;
   object-fit: contain;

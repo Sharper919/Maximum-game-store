@@ -26,10 +26,24 @@
   border: 1px solid white;
 }
 
-.games-list {
+/*.games-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 40px 100px;
+}*/
+
+.games-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px 20px;
+}
+
+@media (max-width: 768px) {
+    .game-component {
+        max-width: 90%;
+    }
 }
