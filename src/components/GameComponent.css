@@ -11,13 +11,36 @@
     background-color: #1a1a1a;
     padding: 15px;
     box-sizing: border-box;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 .game-component:hover {
     transform: scale(1.03);
+    background-color: #00e5ff;
+    color: black;
     cursor: pointer;
 }
+
+/*.game-component:active {
+    transform: scale(1.0);
+}*/
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1.03);
+    }
+}
+
+.game-component.pop-effect {
+    animation: pop 200ms ease-out;
+}
+
 
 .game-image {
     width: 100%;
@@ -46,5 +69,4 @@
     font-size: 30px;
     margin-top: auto;
     margin-left: 20px;
-    color: #ccc;
 }
