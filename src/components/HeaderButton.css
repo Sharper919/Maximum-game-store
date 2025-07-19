@@ -5,9 +5,17 @@
   font-size: 30px;
   font-weight: 400;
   cursor: pointer;
-  transition: background 0.2s ease;
-  height: 70px;
-  width: 156px;
+  height: 90px;
+  width: 180px;
+  transition: background-color 0s ease;
+}
+
+.btn.primary:hover {
+    background-color: #67f0ff;
+}
+
+.btn.default:hover {
+    background-color: rgb(175, 175, 175);
 }
 
 .btn.default {
@@ -16,6 +24,6 @@
 }
 
 .btn.primary {
-  background-color: #00e5ff;
+  background-color: #00d5ff;
   color: black;
 }

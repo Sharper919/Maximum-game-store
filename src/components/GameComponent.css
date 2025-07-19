@@ -16,7 +16,7 @@
 
 .game-component:hover {
     transform: scale(1.03);
-    background-color: #00e5ff;
+    background-color: #00d5ff;
     color: black;
     cursor: pointer;
 }
