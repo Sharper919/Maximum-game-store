@@ -7,7 +7,7 @@ import microsoft_logo from '../images/microsoft-logo.png';
 import xbox_logo from '../images/xbox-logo.png';
 
 export default function SignUpPage() {
-    return(
+    return (
         <div className="signup-container">
             <div className="signup-box">
                 <div className="logo-container">
