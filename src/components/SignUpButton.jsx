@@ -1,5 +1,5 @@
 import React from 'react';
-//import './Button.css';
+//import './SignUpButton.css';
 
 const SignUpButton = ({ children, type = "button" }) => {
   return (

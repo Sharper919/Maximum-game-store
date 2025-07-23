@@ -14,7 +14,7 @@ export default function SignUpPage() {
                     <img src={logo} alt="Logo" className="logo" />
                 </div>
 
-                <h1 className="title">Sign Up</h1>
+                <p className="title">Sign Up</p>
 
                 <form className="signup-form">
                     <label htmlFor="email" className="signup-label">Email address</label>
