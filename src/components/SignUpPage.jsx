@@ -16,11 +16,14 @@ export default function SignUpPage() {
                 <p className="title">Sign Up</p>
 
                 <form className="signup-form">
+                    <label htmlFor="username" className="signup-label">Username</label>
+                    <input type="text" id="username" name="username" className="signup-input" required autoComplete="username" />
+
                     <label htmlFor="email" className="signup-label">Email address</label>
-                    <input type="email" id="email" name="email" className="signup-input" required />
+                    <input type="email" id="email" name="email" className="signup-input" required autoComplete="email" />
 
                     <label htmlFor="password" className="signup-label">Password</label>
-                    <input type="password" id="password" name="password" className="signup-input" required />
+                    <input type="password" id="password" name="password" className="signup-input" required autoComplete="new-password" />
 
                     <button type="button" className="signup-button">sign up</button>
                 </form>
