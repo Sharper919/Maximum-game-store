@@ -1,5 +1,4 @@
 import React from 'react';
-import SignUpButton from './SignUpButton';
 import './SignUpPage.css';
 import logo from './maximum_game.png';
 import google_logo from '../images/google-logo.png';
@@ -23,7 +22,7 @@ export default function SignUpPage() {
                     <label htmlFor="password" className="signup-label">Password</label>
                     <input type="password" id="password" name="password" className="signup-input" required />
 
-                    <SignUpButton type="submit">sign up</SignUpButton>
+                    <button type="button" className="signup-button">sign up</button>
                 </form>
 
                 <div className="signup-divider">
