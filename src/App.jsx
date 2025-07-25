@@ -7,13 +7,13 @@ import SignInPage from './components/SignInPage';
 function App() {
   return (
     <div className='App'>
-      <Router>
+      {/* <Router>
         <Routes>
           <Route path="/" element={<MainScreen />} />
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/signin" element={<SignInPage />} />
         </Routes>
-      </Router>
+      </Router> */}
     </div>
   );
 }
