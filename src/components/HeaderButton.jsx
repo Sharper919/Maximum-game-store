@@ -1,9 +1,18 @@
 import React from 'react';
-import './HeaderButton.css'
+import './HeaderButton.css';
+import { useNavigate } from 'react-router-dom';
 
-const HeaderButton = ({ text, type = 'default' }) => {
-    return(
-        <button className={`btn ${type}`}>
+const HeaderButton = ({ text, type = 'default', navigateTo }) => {
+    const navigate = useNavigate()
+
+    const handleClick = () => {
+        if (navigateTo) {
+            navigate(navigateTo);
+        }
+    };
+
+    return (
+        <button className={`btn ${type}`} onClick={handleClick}>
             {text}
         </button>
     )

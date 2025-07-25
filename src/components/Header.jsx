@@ -17,7 +17,7 @@ class Header extends React.Component {
                 <HeaderInput />
                 <div className="right-section">
                     <HeaderButton text='sign in'/>
-                    <HeaderButton text='sign up' type='primary'/>
+                    <HeaderButton text='sign up' type='primary' navigateTo="/signup" />
                 </div>
             </header>
         )
