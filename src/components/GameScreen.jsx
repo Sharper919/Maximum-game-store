@@ -1,3 +1,4 @@
+import React from 'react';
 import './GameScreen.css';
 import Header from './Header';
 import assassin from '../images/assassin.avif'
@@ -19,9 +20,13 @@ function GameScreen() {
             <div className="buy-game">
                 <h3>Buy the game</h3>
                 <hr />
-                <p><span>Price:</span> UAH 1,999</p>
-                <button id="button-buy-now">Buy Now</button>
-                <button id="button-buy-now">Add to basket</button>
+                <div className="buy-game-content">
+                    <span id='buy-game-content-price'><span>Price:</span> UAH 1,999</span>
+                    <div className="button-block">
+                        <button id="button-buy-now">Buy Now</button>
+                        <button id="button-buy-now">Add to basket</button>
+                    </div>
+                </div>
             </div>
 
             <div className="basic-information">
@@ -59,7 +64,7 @@ function GameScreen() {
                         <p><span>Storage:</span> 115 GB available space</p>
                     </div>
                     <div className="system-requirements-recommended">
-                        <p><span>Minimum:</span></p>
+                        <p><span>Recommended:</span></p>
                         <p><span>OS:</span> Windows 10/11</p>
                         <p><span>Processor:</span> Intel® Core™ i5 11600k/AMD Ryzen™ 5 5600x</p>
                         <p><span>Memory:</span> 16 GB RAM</p>
