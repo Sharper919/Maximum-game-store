@@ -66,6 +66,15 @@ h1 {
     height: 70px;
     background-color: rgba(0, 221, 255, 1);
     font-size: 30px;
+    transition: background-color 0s ease;
+}
+
+.buy-game button:hover {
+    background-color: #00a9bc;
+}
+
+.buy-game button:active {
+  background-color: rgb(113, 236, 255);
 }
 
 .buy-game hr,
