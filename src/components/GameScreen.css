@@ -9,7 +9,7 @@
 }
 
 h1 {
-    font-size: 64px;
+    font-size: 70px;
 }
 
 .game-screen-image {
@@ -51,7 +51,7 @@ h1 {
 .basic-information h3,
 .about-this-game h3,
 .system-requirements h3 {
-    font-size: 40px;
+    font-size: 50px;
 }
 
 .buy-game button {
