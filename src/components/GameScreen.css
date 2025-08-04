@@ -1,11 +1,15 @@
 .game-screen {
-    /* display: block; */
     margin-top: 176px;
     padding: 50px 250px 0px 250px;
 }
 
 .game-screen-main-tob-block {
-    margin-bottom: 50px;
+    display: flex;
+    gap: 100px;
+}
+
+.game-screen-main-tob-block-info {
+    flex-grow: 1;
 }
 
 h1 {
@@ -17,7 +21,7 @@ h1 {
     width: 710px;
     height: 900px;
     float: left;
-    margin-right: 44px;
+    flex-grow: 0;
 }
 
 .game-screen-image img {
@@ -29,7 +33,6 @@ h1 {
 
 .buy-game { 
     font-size: 30px;
-    margin-bottom: 30px;
 }
 
 .basic-information { 
@@ -38,7 +41,6 @@ h1 {
 
 .about-this-game { 
     font-size: 30px;
-    margin-bottom: 50px;
 }
 
 #buy-game-content-price span,
@@ -52,6 +54,10 @@ h1 {
 .about-this-game h3,
 .system-requirements h3 {
     font-size: 50px;
+}
+
+.buy-game h3 {
+    margin-top: 0px;
 }
 
 .buy-game button {
@@ -86,7 +92,6 @@ h1 {
     text-align: justify;
     justify-content: center;
     align-items: center;
-    /* padding: 0px 250px 0px 250px; */
 }
 
 .about-this-game-img-1,
@@ -113,10 +118,6 @@ h1 {
     align-items: center;
     gap: 100px;
     text-align: justify;
-    /* max-width: 1000px; */
     width: 100%;
 }
 
-/* .system-requirements-minimum {
-    padding-left: 50px;
-} */
