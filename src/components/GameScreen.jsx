@@ -12,34 +12,37 @@ function GameScreen() {
             <Header />
 
             <div className="game-screen-main">
-                <h1>Assassin’s Creed Shadows</h1>
 
-                <div className="game-screen-image">
-                    <img src={assassin} alt="Assassin’s Creed Shadows" />
-                </div>
+                <div className="game-screen-main-tob-block">
+                    <h1>Assassin’s Creed Shadows</h1>
 
-                <div className="buy-game">
-                    <h3>Buy the game</h3>
-                    <hr />
-                    <div className="buy-game-content">
-                        <span id='buy-game-content-price'><span>Price:</span> UAH 1,999</span>
-                        <div className="button-block">
-                            <button id="button-buy-now">Buy Now</button>
-                            <button id="button-buy-now">Add to basket</button>
+                    <div className="game-screen-image">
+                        <img src={assassin} alt="Assassin’s Creed Shadows" />
+                    </div>
+
+                    <div className="buy-game">
+                        <h3>Buy the game</h3>
+                        <hr />
+                        <div className="buy-game-content">
+                            <span id='buy-game-content-price'><span>Price:</span> UAH 1,999</span>
+                            <div className="button-block">
+                                <button id="button-buy-now">Buy Now</button>
+                                <button id="button-buy-now">Add to basket</button>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div className="basic-information">
-                    <h3>Basic information</h3>
-                    <hr />
-                    <p><span>Genre:</span> Action, Adventure, Role-playing games</p>
-                    <p><span>Developer:</span> Ubisoft</p>
-                    <p><span>Publisher:</span> Ubisoft</p>
-                    <p><span>Platforms:</span> PlayStation 5</p>
-                    <p><span>Franchise:</span> Assassin's Creed</p>
-                    <p><span>Release date:</span> March 20. 2025</p>
-                    <p><span>Language:</span> English</p>
+                    <div className="basic-information">
+                        <h3>Basic information</h3>
+                        <hr />
+                        <p><span>Genre:</span> Action, Adventure, Role-playing games</p>
+                        <p><span>Developer:</span> Ubisoft</p>
+                        <p><span>Publisher:</span> Ubisoft</p>
+                        <p><span>Platforms:</span> PlayStation 5</p>
+                        <p><span>Franchise:</span> Assassin's Creed</p>
+                        <p><span>Release date:</span> March 20. 2025</p>
+                        <p><span>Language:</span> English</p>
+                    </div>
                 </div>
 
                 <div className="about-this-game">
