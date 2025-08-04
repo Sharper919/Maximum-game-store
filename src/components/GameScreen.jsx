@@ -29,7 +29,7 @@ function GameScreen() {
                                 <span id='buy-game-content-price'><span>Price:</span> UAH 1,999</span>
                                 <div className="button-block">
                                     <button id="button-buy-now">Buy Now</button>
-                                    <button id="button-buy-now">Add to basket</button>
+                                    <button id="add-to-basket">Add to basket</button>
                                 </div>
                             </div>
                         </div>
