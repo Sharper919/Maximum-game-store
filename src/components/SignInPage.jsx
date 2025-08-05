@@ -13,7 +13,7 @@ export default function SignUpPage() {
                     <img src={logo} alt="Logo" className="logo" />
                 </div>
 
-                <p className="title">Sign Up</p>
+                <p className="title">Sign In</p>
 
                 <form className="signup-form">
                     <label htmlFor="email" className="signup-label">Email address</label>
@@ -22,7 +22,7 @@ export default function SignUpPage() {
                     <label htmlFor="password" className="signup-label">Password</label>
                     <input type="password" id="password" name="password" className="signup-input" required autoComplete="new-password" />
 
-                    <button type="button" className="signup-button">sign up</button>
+                    <button type="button" className="signup-button">sign in</button>
                 </form>
 
                 <div className="signup-divider">

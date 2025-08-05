@@ -2,11 +2,12 @@ import React from 'react';
 import logo from './maximum_game.png';
 import './Header.css';
 import MenuIcon from './MenuIcon';
-// import HeaderInput from './HeaderInput';
-// import HeaderButton from './HeaderButton';
+import HeaderInput from './HeaderInput';
+import HeaderButton from './HeaderButton';
 
 class Header extends React.Component {
     render() {
+        const { showButtons } = this.props;
         return (
             <header className='header'>
                 <div className="left-section">
@@ -14,11 +15,15 @@ class Header extends React.Component {
                     <img src={logo} alt="Logo" className="maximum-game-img" />
                     <span className="store-name">Maximum Game Store</span>
                 </div>
-                {/* <HeaderInput />
+                <HeaderInput />
                 <div className="right-section">
-                    <HeaderButton text='sign in' navigateTo="/signin" />
-                    <HeaderButton text='sign up' type='primary' navigateTo="/signup" />
-                </div> */}
+                    {showButtons && (
+                        <>
+                            <HeaderButton text='sign in' navigateTo="/signin" />
+                            <HeaderButton text='sign up' type='primary' navigateTo="/signup" />
+                        </>
+                    )}
+                </div>
             </header>
         )
     }

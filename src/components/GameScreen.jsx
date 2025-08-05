@@ -9,7 +9,7 @@ import assassi2 from '../images/assassin-2.png'
 function GameScreen() {
     return (
         <div className="game-screen">
-            <Header />
+            <Header showButtons={false}/>
 
             <div className="game-screen-main">
 
