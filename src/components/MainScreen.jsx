@@ -10,6 +10,7 @@ import lastofus2rem from '../images/lastofus2rem.png'
 import codbo6 from '../images/codbo6.png'
 import truck from '../images/truck.png'
 import monsterhunt from '../images/monsterhunt.png'
+import { useNavigate } from 'react-router-dom';
 
 
 const games = [
@@ -25,6 +26,13 @@ const games = [
 
 
 function MainScreen() {
+  const navigate = useNavigate();
+
+  const handleGameClick = (game) => {
+    // You can pass game info via state or params if needed
+    navigate('/game');
+  };
+
   return (
     <div id='main-screen'>
       <Header showButtons={true}/>
@@ -41,6 +49,7 @@ function MainScreen() {
                     image={game.image}
                     gameName={game.gameName}
                     gamePrice={game.gamePrice}
+                    onClick={() => handleGameClick(game)}
                 />
             ))}
       </div>

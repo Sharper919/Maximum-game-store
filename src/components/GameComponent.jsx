@@ -1,15 +1,18 @@
 import React, { useRef } from 'react';
 import './GameComponent.css';
 
-const GameComponent = ({ image, gameName, gamePrice }) => {
+const GameComponent = ({ image, gameName, gamePrice, onClick }) => {
     const cardRef = useRef(null);
 
-    const handleClick = () => {
+    const handleClick = (e) => {
         const card = cardRef.current;
         if (card) {
             card.classList.remove('pop-effect'); // скидаємо, якщо вже є
             void card.offsetWidth; // перезапускаємо анімацію
             card.classList.add('pop-effect');
+        }
+        if (onClick) {
+            onClick(e);
         }
     };
 
