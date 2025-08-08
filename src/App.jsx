@@ -4,6 +4,7 @@ import './App.css';
 // import SignUpPage from './components/SignUpPage';
 // import SignInPage from './components/SignInPage';
 // import GameScreen from './components/GameScreen';
+import Cart from './components/Cart';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
           <Route path="/game" element={<GameScreen />} />
         </Routes>
       </Router> */}
-
+      <Cart />
     </div>
   );
 }

@@ -1,4 +1,5 @@
-//import './GameScreen.css';
+import './Cart.css';
+import React from 'react';
 import Header from './Header';
 import assassin from '../images/assassin.avif';
 import stalker2 from '../images/stalker2.png';
@@ -6,7 +7,7 @@ import stalker2 from '../images/stalker2.png';
 export default function Cart() {
     return (
         <div className="cart-screen">
-            <Header showButtons={true} />
+            <Header showButtons={false} />
 
             <div className="cart-screen-main">
                 <h1>Shopping Cart</h1>
@@ -22,35 +23,31 @@ export default function Cart() {
                     </div>
                 </div> */}
 
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Зображення</th>
-                            <th>Назва гри</th>
-                            <th>Ціна</th>
-                            <th>Дія</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><img src={assassin} alt="Assassin's Creed Shadows"/></td>
-                            <td>Assassin's Creed Shadows</td>
-                            <td>UAH 1,999</td>
-                            <td><button>Видалити</button></td>
-                        </tr>
-                        <tr>
-                            <td><img src={stalker2} alt="S.T.A.L.K.E.R. 2: Heart of Chornobyl"/></td>
-                            <td>S.T.A.L.K.E.R. 2: Heart of Chornobyl</td>
-                            <td>UAH 1,399</td>
-                            <td><button>Видалити</button></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div className="cart-screen-content">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td><img src={assassin} alt="Assassin's Creed Shadows" /></td>
+                                <td>Assassin's Creed Shadows</td>
+                                <td>UAH 1,999</td>
+                                <td><button>Remove</button></td>
+                            </tr>
+                            <tr>
+                                <td><img src={stalker2} alt="S.T.A.L.K.E.R. 2: Heart of Chornobyl" /></td>
+                                <td>S.T.A.L.K.E.R. 2: Heart of Chornobyl</td>
+                                <td>UAH 1,399</td>
+                                <td><button>Remove</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                <div className="cart-total">
-                    <h3>Total: <span>UAH 3,398</span></h3>
-                    <button className="checkout-button">Proceed to Checkout</button>
+                    <div className="cart-total">
+                        <h3>Total: <span>UAH 3,398</span></h3>
+                        <button className="checkout-button">Proceed to Checkout</button>
+                    </div>
+
                 </div>
+
             </div>
         </div>
     );
