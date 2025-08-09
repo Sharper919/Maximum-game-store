@@ -1,6 +1,7 @@
 .cart-screen {
     margin-top: 176px;
     padding: 50px 250px 0px 250px;
+    min-height: 100vh;
 }
 
 h1 {
@@ -13,26 +14,32 @@ h1 {
     gap: 50px;
 }
 
-.cart-screen-content table {
+.cart-items {
     width: 100%;
-    border-radius: 100px;
-    border-spacing: 0px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
 }
 
-.cart-screen-content tbody tr {
-    border-radius: 100px;
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
     background-color: rgba(38, 38, 38, 1);
+    border-radius: 40px;
+    padding: 20px;
     font-size: 30px;
 }
 
-.cart-screen-content tbody tr img {
+.cart-item img {
     width: 200px;
     height: 300px;
     object-fit: cover;
     border-radius: 40px;
 }
 
-.cart-screen-content tbody tr button {
+.remove-button {
     width: 200px;
     height: 80px;
     border-radius: 30px;

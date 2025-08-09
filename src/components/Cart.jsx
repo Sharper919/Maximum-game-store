@@ -12,34 +12,22 @@ export default function Cart() {
             <div className="cart-screen-main">
                 <h1>Shopping Cart</h1>
 
-                {/* <div className="cart-items">
-                    <div className="cart-item">
-                        <img src={assassin} alt="Assassin’s Creed Shadows" />
-                        <div className="cart-item-info">
+                <div className="cart-screen-content">
+                    <div className="cart-items">
+                        <div className="cart-item">
+                            <img src={assassin} alt="Assassin’s Creed Shadows" />
                             <h3>Assassin’s Creed Shadows</h3>
                             <p>Price: UAH 1,999</p>
-                            <button className="remove-from-cart">Remove from cart</button>
+                            <button className="remove-button">Remove</button>
+                        </div>
+
+                        <div className="cart-item">
+                            <img src={stalker2} alt="S.T.A.L.K.E.R. 2: Heart of Chornobyl" />
+                            <h3>S.T.A.L.K.E.R. 2: Heart of Chornobyl</h3>
+                            <p>Price: UAH 1,399</p>
+                            <button className="remove-button">Remove</button>
                         </div>
                     </div>
-                </div> */}
-
-                <div className="cart-screen-content">
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td><img src={assassin} alt="Assassin's Creed Shadows" /></td>
-                                <td>Assassin's Creed Shadows</td>
-                                <td>UAH 1,999</td>
-                                <td><button>Remove</button></td>
-                            </tr>
-                            <tr>
-                                <td><img src={stalker2} alt="S.T.A.L.K.E.R. 2: Heart of Chornobyl" /></td>
-                                <td>S.T.A.L.K.E.R. 2: Heart of Chornobyl</td>
-                                <td>UAH 1,399</td>
-                                <td><button>Remove</button></td>
-                            </tr>
-                        </tbody>
-                    </table>
 
                     <div className="cart-total">
                         <h3>Total: <span>UAH 3,398</span></h3>
