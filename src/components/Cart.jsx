@@ -23,15 +23,12 @@ export default function Cart() {
                         <CartItem imgSrc={stalker2} title="S.T.A.L.K.E.R. 2: Heart of Chornobyl" price="1399" />
                     </div>
                     
-
                     <div className="cart-total">
                         <h3>Total: <span>UAH 3,398</span></h3>
                         <button className="checkout-button">Proceed to Checkout</button>
                         <button className="checkout-button">Continue shopping</button>
                     </div>
-
                 </div>
-
             </div>
         </div>
     );
