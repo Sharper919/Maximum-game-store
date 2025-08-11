@@ -1,6 +1,7 @@
 import './Cart.css';
 import React from 'react';
 import Header from './Header';
+import CartItem from './CartItem';
 import assassin from '../images/assassin.avif';
 import stalker2 from '../images/stalker2.png';
 
@@ -14,45 +15,12 @@ export default function Cart() {
 
                 <div className="cart-screen-content">
                     <div className="cart-items">
-                        <div className="cart-item">
-                            <img src={assassin} alt="Assassin’s Creed Shadows" />
-                            <h3>Assassin’s Creed Shadows</h3>
-                            <p>Price: UAH 1,999</p>
-                            <button className="remove-button">Remove</button>
-                        </div>
-
-                        <div className="cart-item">
-                            <img src={stalker2} alt="S.T.A.L.K.E.R. 2: Heart of Chornobyl" />
-                            <h3>S.T.A.L.K.E.R. 2: Heart of Chornobyl</h3>
-                            <p>Price: UAH 1,399</p>
-                            <button className="remove-button">Remove</button>
-                        </div>
-                        <div className="cart-item">
-                            <img src={assassin} alt="Assassin’s Creed Shadows" />
-                            <h3>Assassin’s Creed Shadows</h3>
-                            <p>Price: UAH 1,999</p>
-                            <button className="remove-button">Remove</button>
-                        </div>
-
-                        <div className="cart-item">
-                            <img src={stalker2} alt="S.T.A.L.K.E.R. 2: Heart of Chornobyl" />
-                            <h3>S.T.A.L.K.E.R. 2: Heart of Chornobyl</h3>
-                            <p>Price: UAH 1,399</p>
-                            <button className="remove-button">Remove</button>
-                        </div>
-                        <div className="cart-item">
-                            <img src={assassin} alt="Assassin’s Creed Shadows" />
-                            <h3>Assassin’s Creed Shadows</h3>
-                            <p>Price: UAH 1,999</p>
-                            <button className="remove-button">Remove</button>
-                        </div>
-
-                        <div className="cart-item">
-                            <img src={stalker2} alt="S.T.A.L.K.E.R. 2: Heart of Chornobyl" />
-                            <h3>S.T.A.L.K.E.R. 2: Heart of Chornobyl</h3>
-                            <p>Price: UAH 1,399</p>
-                            <button className="remove-button">Remove</button>
-                        </div>
+                        <CartItem imgSrc={assassin} title="Assassin’s Creed Shadows" price="1999" />
+                        <CartItem imgSrc={stalker2} title="S.T.A.L.K.E.R. 2: Heart of Chornobyl" price="1399" />
+                        <CartItem imgSrc={assassin} title="Assassin’s Creed Shadows" price="1999" />
+                        <CartItem imgSrc={stalker2} title="S.T.A.L.K.E.R. 2: Heart of Chornobyl" price="1399" />
+                        <CartItem imgSrc={assassin} title="Assassin’s Creed Shadows" price="1999" />
+                        <CartItem imgSrc={stalker2} title="S.T.A.L.K.E.R. 2: Heart of Chornobyl" price="1399" />
                     </div>
                     
 
