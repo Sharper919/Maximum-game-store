@@ -27,11 +27,39 @@ export default function Cart() {
                             <p>Price: UAH 1,399</p>
                             <button className="remove-button">Remove</button>
                         </div>
+                        <div className="cart-item">
+                            <img src={assassin} alt="Assassin’s Creed Shadows" />
+                            <h3>Assassin’s Creed Shadows</h3>
+                            <p>Price: UAH 1,999</p>
+                            <button className="remove-button">Remove</button>
+                        </div>
+
+                        <div className="cart-item">
+                            <img src={stalker2} alt="S.T.A.L.K.E.R. 2: Heart of Chornobyl" />
+                            <h3>S.T.A.L.K.E.R. 2: Heart of Chornobyl</h3>
+                            <p>Price: UAH 1,399</p>
+                            <button className="remove-button">Remove</button>
+                        </div>
+                        <div className="cart-item">
+                            <img src={assassin} alt="Assassin’s Creed Shadows" />
+                            <h3>Assassin’s Creed Shadows</h3>
+                            <p>Price: UAH 1,999</p>
+                            <button className="remove-button">Remove</button>
+                        </div>
+
+                        <div className="cart-item">
+                            <img src={stalker2} alt="S.T.A.L.K.E.R. 2: Heart of Chornobyl" />
+                            <h3>S.T.A.L.K.E.R. 2: Heart of Chornobyl</h3>
+                            <p>Price: UAH 1,399</p>
+                            <button className="remove-button">Remove</button>
+                        </div>
                     </div>
+                    
 
                     <div className="cart-total">
                         <h3>Total: <span>UAH 3,398</span></h3>
                         <button className="checkout-button">Proceed to Checkout</button>
+                        <button className="checkout-button">Continue shopping</button>
                     </div>
 
                 </div>
