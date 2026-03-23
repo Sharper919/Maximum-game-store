@@ -1,4 +1,4 @@
-import './Cart.css';
+import '../css/Cart.css';
 import React from 'react';
 import Header from './Header';
 import CartItem from './CartItem';

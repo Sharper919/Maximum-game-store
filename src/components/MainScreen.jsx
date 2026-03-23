@@ -1,4 +1,4 @@
-import './MainScreen.css';
+import '../css/MainScreen.css';
 import Header from './Header';
 import GameComponent from './GameComponent'
 import banner from './igri.jpeg';

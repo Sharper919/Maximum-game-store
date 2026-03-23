@@ -1,4 +1,4 @@
-import './CartItem.css';
+import '../css/CartItem.css';
 import React from 'react';
 
 export default function CartItem({ imgSrc, title, price }) {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './SignUpPage.css';
+import '../css/SignUpPage.css';
 import logo from './maximum_game.png';
 import google_logo from '../images/google-logo.png';
 import microsoft_logo from '../images/microsoft-logo.png';

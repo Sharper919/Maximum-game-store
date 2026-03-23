@@ -1,5 +1,5 @@
 import React from 'react';
-import './GameScreen.css';
+import '../css/GameScreen.css';
 import Header from './Header';
 import assassin from '../images/assassin.avif'
 import assassi1 from '../images/assassin-1.png'

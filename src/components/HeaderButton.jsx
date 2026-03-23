@@ -1,5 +1,5 @@
 import React from 'react';
-import './HeaderButton.css';
+import '../css/HeaderButton.css';
 import { useNavigate } from 'react-router-dom';
 
 const HeaderButton = ({ text, type = 'default', navigateTo }) => {

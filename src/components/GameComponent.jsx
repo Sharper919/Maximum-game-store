@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import './GameComponent.css';
+import '../css/GameComponent.css';
 
 const GameComponent = ({ image, gameName, gamePrice, onClick }) => {
     const cardRef = useRef(null);
