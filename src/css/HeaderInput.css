@@ -4,9 +4,9 @@
   background-color: #e0e0e0;
   border-radius: 30px;
   overflow: hidden;
-  padding: 2px;
-  width: 609px;
-  height: 60px;
+  justify-content: space-between;
+  width: 260px;
+  height: 40px;
 }
 
 #search-input input {
@@ -14,22 +14,22 @@
   background: transparent;
   padding: 8px 12px;
   outline: none;
-  font-size: 30px;
-  width: 609px;
+  font-size: 17px;
+  width: 200px;
   color: #000;
 }
 
 #search-input button {
   background: none;
   border: none;
-  padding: 6px 10px;
+  padding: 6px 6px;
   cursor: pointer;
   display: flex;
   align-items: center;
 }
 
 #search-input button img {
-  width: 40px;
-  height: 40px;
+  width: 24px;
+  height: 24px;
   object-fit: contain;
 }

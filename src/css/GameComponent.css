@@ -4,10 +4,10 @@
     justify-content: start;
     align-items: start;
     width: 100%;
-    max-width: 550px;
+    max-width: 270px;
     height: auto;
-    border-radius: 50px;
-    margin: 20px 0px;
+    border-radius: 30px;
+    /* margin: 20px 0px; */
     background-color: rgb(26, 26, 26);
     padding: 15px;
     box-sizing: border-box;
@@ -46,7 +46,7 @@
     width: 100%;
     aspect-ratio: 3 / 4; /* адаптивна висота */
     overflow: hidden;
-    border-radius: 50px;
+    /* border-radius: 50px; */
 }
 
 .game-image img {
@@ -54,19 +54,19 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    border-radius: 50px;
+    border-radius: 30px;
 }
 
 .game-name {
     font-weight: 600;
-    font-size: 40px;
+    font-size: 17px;
     margin-top: 15px;
-    margin-bottom: 50px;
+    margin-bottom: 15px;
 }
 
 .game-price {
     font-weight: 400;
-    font-size: 30px;
+    font-size: 14px;
     margin-top: auto;
-    margin-left: 20px;
+    /* margin-left: 20px; */
 }

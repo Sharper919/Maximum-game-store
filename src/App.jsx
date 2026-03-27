@@ -1,10 +1,10 @@
-import '../css/App.css';
+import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainScreen from './components/MainScreen';
 import SignUpPage from './components/SignUpPage';
 import SignInPage from './components/SignInPage';
 import GameScreen from './components/GameScreen';
-//import Cart from './components/Cart';
+import Cart from './components/Cart';
 
 function App() {
   return (
@@ -15,9 +15,9 @@ function App() {
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/signin" element={<SignInPage />} />
           <Route path="/game" element={<GameScreen />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </Router>
-      {/* <Cart /> */}
     </div>
   );
 }

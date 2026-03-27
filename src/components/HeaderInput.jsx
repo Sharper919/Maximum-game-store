@@ -1,5 +1,5 @@
 import React from 'react';
-import './HeaderInput.css';
+import '../css/HeaderInput.css';
 import loupe from './loupe.png';
 
 
