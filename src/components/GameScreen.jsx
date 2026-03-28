@@ -59,12 +59,12 @@ function GameScreen() {
                             tranquil shrines and war-torn landscapes. You'll experience unpredictable weather, changing seasons,
                             and environments that react to your actions. Take on the roles of the shinobi assassin Naoe and the
                             legendary samurai Yasuke, learn their incredible stories, and master their complementary playstyles.</p>
-                        <div className="about-this-game-img-1">
+                        <div className="about-this-game-img">
                             <img src={assassi1} alt="assassi1" />
                         </div>
                         <p>Take on the roles of the shinobi assassin Naoe and the legendary samurai Yasuke,
                             learn their incredible stories, and master their complementary playstyles.</p>
-                        <div className="about-this-game-img-2">
+                        <div className="about-this-game-img">
                             <img src={assassi2} alt="assassi2" />
                         </div>
                     </div>

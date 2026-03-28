@@ -2,26 +2,57 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    gap: 25px;
     background-color: rgba(38, 38, 38, 1);
-    border-radius: 40px;
-    padding: 20px;
-    font-size: 30px;
+    border-radius: 25px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cart-item:hover {
+    background-color: rgba(50, 50, 50, 1);
+    box-shadow: 0 8px 25px rgba(0, 213, 255, 0.2);
 }
 
 .cart-item img {
-    width: 200px;
-    height: 300px;
+    width: 150px;
+    height: 220px;
     object-fit: cover;
-    border-radius: 40px;
+    border-radius: 20px;
+    flex-shrink: 0;
+}
+
+.cart-item h3 {
+    margin: 0;
+    font-size: 20px;
+    flex-grow: 1;
+    min-width: 200px;
+}
+
+.cart-item p {
+    margin: 0;
+    font-size: 18px;
+    color: rgb(180, 180, 180);
+    min-width: 150px;
 }
 
 .remove-button {
-    width: 200px;
-    height: 80px;
-    border-radius: 30px;
-    font-size: 30px;
+    width: 140px;
+    height: 50px;
+    border-radius: 20px;
+    font-size: 16px;
     color: white;
-    background-color: rgba(38, 38, 38, 1);
-    border-width: 10px;
+    background-color: rgba(50, 50, 50, 1);
+    border: 2px solid rgba(100, 100, 100, 1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.remove-button:hover {
+    background-color: rgb(220, 60, 60);
+    border-color: rgb(220, 60, 60);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(220, 60, 60, 0.3);
 }
