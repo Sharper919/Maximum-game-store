@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from './maximum_game.png';
-import '../css/Header.css';
+import '../../css/header/Header.css';
 import MenuIcon from './MenuIcon';
 import HeaderInput from './HeaderInput';
 import HeaderButton from './HeaderButton';

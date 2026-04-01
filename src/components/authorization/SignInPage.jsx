@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../css/SignUpPage.css';
-import logo from './maximum_game.png';
+import '../../css/authorization/SignUpPage.css';
+import logo from '../header/maximum_game.png';
 
-export default function SignUpPage() {
-    const [username, setUsername] = useState('');
+export default function SignInPage() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
-    const handleSignUp = () => {
-        if (!username || !email || !password) {
+    const handleSignIn = () => {
+        if (!email || !password) {
             setError('Please fill in all fields.');
             return;
         }
@@ -26,21 +25,9 @@ export default function SignUpPage() {
                     <img src={logo} alt="Logo" className="logo" />
                 </div>
 
-                <p className="title">Sign Up</p>
+                <p className="title">Sign In</p>
 
                 <form className="signup-form" onSubmit={e => e.preventDefault()}>
-                    <label htmlFor="username" className="signup-label">Username</label>
-                    <input
-                        type="text"
-                        id="username"
-                        name="username"
-                        className="signup-input"
-                        required
-                        autoComplete="username"
-                        value={username}
-                        onChange={e => setUsername(e.target.value)}
-                    />
-
                     <label htmlFor="email" className="signup-label">Email address</label>
                     <input
                         type="email"
@@ -67,7 +54,7 @@ export default function SignUpPage() {
 
                     {error && <div style={{ color: 'red', marginBottom: 10 }}>{error}</div>}
 
-                    <button type="button" className="signup-button" onClick={handleSignUp}>sign up</button>
+                    <button type="button" className="signup-button" onClick={handleSignIn}>sign in</button>
                 </form>
             </div>
         </div>

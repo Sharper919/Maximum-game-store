@@ -1,10 +1,10 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import MainScreen from './components/MainScreen';
-import SignUpPage from './components/SignUpPage';
-import SignInPage from './components/SignInPage';
-import GameScreen from './components/GameScreen';
-import Cart from './components/Cart';
+import MainScreen from './components/main-screen/MainScreen';
+import SignUpPage from './components/authorization/SignUpPage';
+import SignInPage from './components/authorization/SignInPage';
+import GameScreen from './components/game_screen/GameScreen';
+import Cart from './components/cart/Cart';
 
 function App() {
   return (

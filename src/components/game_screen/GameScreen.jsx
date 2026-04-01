@@ -1,9 +1,9 @@
 import React from 'react';
-import '../css/GameScreen.css';
-import Header from './Header';
-import assassin from '../images/assassin.avif'
-import assassi1 from '../images/assassin-1.png'
-import assassi2 from '../images/assassin-2.png'
+import '../../css/game_screen/GameScreen.css';
+import Header from '../header/Header';
+import assassin from '../../images/assassin.avif'
+import assassi1 from '../../images/assassin-1.png'
+import assassi2 from '../../images/assassin-2.png'
 
 
 function GameScreen() {
@@ -28,8 +28,8 @@ function GameScreen() {
                             <div className="buy-game-content">
                                 <span id='buy-game-content-price'><span>Price:</span> UAH 1,999</span>
                                 <div className="button-block">
-                                    <button id="button-buy-now">Buy Now</button>
-                                    <button id="add-to-basket">Add to basket</button>
+                                    <button id="button-buy-now">Buy now</button>
+                                    <button id="add-to-basket">Add to cart</button>
                                 </div>
                             </div>
                         </div>

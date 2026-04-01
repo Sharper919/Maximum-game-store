@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/MenuIcon.css';
+import '../../css/header/MenuIcon.css';
 
 const MenuIcon = () => {
   return (

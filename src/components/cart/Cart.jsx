@@ -1,9 +1,9 @@
-import '../css/Cart.css';
+import '../../css/cart/Cart.css';
 import React from 'react';
-import Header from './Header';
+import Header from '../header/Header';
 import CartItem from './CartItem';
-import assassin from '../images/assassin.avif';
-import stalker2 from '../images/stalker2.png';
+import assassin from '../../images/assassin.avif';
+import stalker2 from '../../images/stalker2.png';
 
 export default function Cart() {
     return (

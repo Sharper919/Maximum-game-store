@@ -63,6 +63,7 @@
   color: #ffffff;
   cursor: pointer;
   transition: background-color 0s ease;
+  border: none;
 }
 
 .signup-button:hover {

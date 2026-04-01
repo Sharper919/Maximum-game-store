@@ -1,15 +1,15 @@
-import '../css/MainScreen.css';
-import Header from './Header';
+import '../../css/main-screen/MainScreen.css';
+import Header from '../header/Header';
 import GameComponent from './GameComponent'
 import banner from './igri.jpeg';
-import assassin from '../images/assassin.avif'
-import stalker2 from '../images/stalker2.png'
-import importals33 from '../images/33importals.png'
-import spiderman2 from '../images/spiderman2.png'
-import lastofus2rem from '../images/lastofus2rem.png'
-import codbo6 from '../images/codbo6.png'
-import truck from '../images/truck.png'
-import monsterhunt from '../images/monsterhunt.png'
+import assassin from '../../images/assassin.avif'
+import stalker2 from '../../images/stalker2.png'
+import importals33 from '../../images/33importals.png'
+import spiderman2 from '../../images/spiderman2.png'
+import lastofus2rem from '../../images/lastofus2rem.png'
+import codbo6 from '../../images/codbo6.png'
+import truck from '../../images/truck.png'
+import monsterhunt from '../../images/monsterhunt.png'
 import { useNavigate } from 'react-router-dom';
 
 
