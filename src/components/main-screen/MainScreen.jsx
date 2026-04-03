@@ -29,7 +29,6 @@ function MainScreen() {
   const navigate = useNavigate();
 
   const handleGameClick = (game) => {
-    // You can pass game info via state or params if needed
     navigate('/game');
   };
 
