@@ -6,11 +6,13 @@ const GameComponent = ({ image, gameName, gamePrice, onClick }) => {
 
     const handleClick = (e) => {
         const card = cardRef.current;
+
         if (card) {
-            card.classList.remove('pop-effect'); // скидаємо, якщо вже є
-            void card.offsetWidth; // перезапускаємо анімацію
+            card.classList.remove('pop-effect');
+            void card.offsetWidth;
             card.classList.add('pop-effect');
         }
+
         if (onClick) {
             onClick(e);
         }
@@ -25,10 +27,13 @@ const GameComponent = ({ image, gameName, gamePrice, onClick }) => {
             <div className="game-image">
                 <img src={image} alt={gameName} />
             </div>
+
             <div className="game-name">{gameName}</div>
+
             <div className="game-price">{gamePrice}</div>
         </div>
     );
 };
+
 
 export default GameComponent;
