@@ -3,19 +3,44 @@ import { useNavigate } from 'react-router-dom';
 import '../../css/authorization/SignUpPage.css';
 import logo from '../header/maximum_game.png';
 
+const BASE_URL = 'https://localhost:7151';
+
 export default function SignInPage() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
-    const handleSignIn = () => {
+    const handleSignIn = async () => {
         if (!email || !password) {
             setError('Please fill in all fields.');
             return;
         }
-        setError('');
-        navigate('/');
+
+        try {
+            const res = await fetch(`${BASE_URL}/api/auth/login`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    email,
+                    password
+                })
+            });
+
+            if (!res.ok) {
+                const text = await res.text();
+                throw new Error(text);
+            }
+
+            const data = await res.json();
+
+            localStorage.setItem('token', data.token);
+            localStorage.setItem('userName', data.userName);
+
+            navigate('/');
+        } catch (err) {
+            setError(err.message || 'Login failed');
+        }
     };
 
     return (
@@ -28,33 +53,25 @@ export default function SignInPage() {
                 <p className="title">Sign In</p>
 
                 <form className="signup-form" onSubmit={e => e.preventDefault()}>
-                    <label htmlFor="email" className="signup-label">Email address</label>
+                    <label className="signup-label">Email</label>
                     <input
                         type="email"
-                        id="email"
-                        name="email"
                         className="signup-input"
-                        required
-                        autoComplete="email"
                         value={email}
                         onChange={e => setEmail(e.target.value)}
                     />
 
-                    <label htmlFor="password" className="signup-label">Password</label>
+                    <label className="signup-label">Password</label>
                     <input
                         type="password"
-                        id="password"
-                        name="password"
                         className="signup-input"
-                        required
-                        autoComplete="new-password"
                         value={password}
                         onChange={e => setPassword(e.target.value)}
                     />
 
-                    {error && <div style={{ color: 'red', marginBottom: 10 }}>{error}</div>}
+                    {error && <div style={{ color: 'red' }}>{error}</div>}
 
-                    <button type="button" className="signup-button" onClick={handleSignIn}>sign in</button>
+                    <button type="button" className="signup-button" onClick={handleSignIn}>Sign In</button>
                 </form>
             </div>
         </div>

@@ -6,8 +6,18 @@ import HeaderInput from './HeaderInput';
 import HeaderButton from './HeaderButton';
 
 class Header extends React.Component {
+    handleLogout = () => {
+        localStorage.removeItem('token');
+        localStorage.removeItem('userName');
+        window.location.href = '/';
+    };
+
     render() {
         const { showButtons } = this.props;
+
+        const userName = localStorage.getItem('userName');
+        const firstLetter = userName ? userName.charAt(0).toUpperCase() : null;
+
         return (
             <header className='header'>
                 <div className="left-section">
@@ -15,18 +25,30 @@ class Header extends React.Component {
                     <img src={logo} alt="Logo" className="maximum-game-img" />
                     <span className="store-name">Maximum Game Store</span>
                 </div>
+
                 <HeaderInput />
+
                 <div className="right-section">
                     <HeaderButton text='Cart' type='default' navigateTo="/cart" />
-                    {showButtons && (
+
+                    {!userName && showButtons && (
                         <>
                             <HeaderButton text='sign in' navigateTo="/signin" />
                             <HeaderButton text='sign up' type='primary' navigateTo="/signup" />
                         </>
                     )}
+
+                    {userName && (
+                        <div className="user-block">
+                            <div className="user-avatar">
+                                {firstLetter}
+                            </div>
+                            <button className="logout-btn" onClick={this.handleLogout}>Logout</button>
+                        </div>
+                    )}
                 </div>
             </header>
-        )
+        );
     }
 }
 

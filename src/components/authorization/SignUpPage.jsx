@@ -3,20 +3,47 @@ import { useNavigate } from 'react-router-dom';
 import '../../css/authorization/SignUpPage.css';
 import logo from '../header/maximum_game.png';
 
+const BASE_URL = 'https://localhost:7151';
+
 export default function SignUpPage() {
-    const [username, setUsername] = useState('');
+    const [userName, setUserName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
-    const handleSignUp = () => {
-        if (!username || !email || !password) {
+    const handleSignUp = async () => {
+        if (!userName || !email || !password) {
             setError('Please fill in all fields.');
             return;
         }
-        setError('');
-        navigate('/');
+
+        try {
+            const res = await fetch(`${BASE_URL}/api/auth/register`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    userName,
+                    email,
+                    password
+                })
+            });
+
+            if (!res.ok) {
+                const text = await res.text();
+                throw new Error(text);
+            }
+
+            const data = await res.json();
+
+            // 🔐 одразу логінимо
+            localStorage.setItem('token', data.token);
+            localStorage.setItem('userName', data.userName);
+
+            navigate('/');
+        } catch (err) {
+            setError(err.message || 'Registration failed');
+        }
     };
 
     return (
@@ -29,45 +56,35 @@ export default function SignUpPage() {
                 <p className="title">Sign Up</p>
 
                 <form className="signup-form" onSubmit={e => e.preventDefault()}>
-                    <label htmlFor="username" className="signup-label">Username</label>
+                    <label className="signup-label">Username</label>
                     <input
                         type="text"
-                        id="username"
-                        name="username"
                         className="signup-input"
-                        required
-                        autoComplete="username"
-                        value={username}
-                        onChange={e => setUsername(e.target.value)}
+                        value={userName}
+                        onChange={e => setUserName(e.target.value)}
                     />
 
-                    <label htmlFor="email" className="signup-label">Email address</label>
+                    <label className="signup-label">Email</label>
                     <input
                         type="email"
-                        id="email"
-                        name="email"
                         className="signup-input"
-                        required
-                        autoComplete="email"
                         value={email}
                         onChange={e => setEmail(e.target.value)}
                     />
 
-                    <label htmlFor="password" className="signup-label">Password</label>
+                    <label className="signup-label">Password</label>
                     <input
                         type="password"
-                        id="password"
-                        name="password"
                         className="signup-input"
-                        required
-                        autoComplete="new-password"
                         value={password}
                         onChange={e => setPassword(e.target.value)}
                     />
 
-                    {error && <div style={{ color: 'red', marginBottom: 10 }}>{error}</div>}
+                    {error && <div style={{ color: 'red' }}>{error}</div>}
 
-                    <button type="button" className="signup-button" onClick={handleSignUp}>sign up</button>
+                    <button type="button" className="signup-button" onClick={handleSignUp}>
+                        Sign Up
+                    </button>
                 </form>
             </div>
         </div>
