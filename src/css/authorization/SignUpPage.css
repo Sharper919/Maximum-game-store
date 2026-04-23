@@ -8,7 +8,7 @@
 .signup-box {
   background-color: rgba(38, 38, 38, 1);
   padding: 0px 70px 40px;
-  border-radius: 40px;
+  border-radius: 30px;
   text-align: center;
   max-width: 500px;
   width: 100%;
@@ -16,7 +16,7 @@
 }
 
 .logo {
-  width: 110px;
+  width: 90px;
   height: auto;
 }
 
@@ -24,6 +24,7 @@
   font-size: 24px;
   font-weight: 600;
   margin-top: 13px;
+  margin-bottom: 45px;
 }
 
 .signup-form {
@@ -39,43 +40,61 @@
   margin-left: 20px;
 }
 
+
+
+
 .signup-input {
   padding: 10px;
-  border: none;
-  border-radius: 30px;
+  /* border: none; */
+  /* border-radius: 30px; */
   font-size: 17px;
   height: 30px;
   margin-bottom: 25px;
-  background-color: rgba(66, 66, 66, 1);
+  border-radius: 15px;
+  border: 1px solid rgba(0, 213, 255, 0.3);
+  background: rgba(30, 30, 30, 1);
   color: #ffffff;
   outline: none;
+}
+
+.signup-input:focus {
+  outline: none;
+  border-color: rgb(0, 213, 255);
+  box-shadow: 0 0 8px rgba(0, 213, 255, 0.3);
 }
 
 .signup-input:last-of-type {
   margin-bottom: 60px;
 }
 
+
+
+
+
+
 .signup-button {
-  background-color: rgba(26, 142, 236, 1);
-  height: 60px;
-  border-radius: 30px;
+  background: rgb(0, 213, 255);
+  color: black;
+  height: 50px;
+  border-radius: 15px;
   font-size: 20px;
-  color: #ffffff;
   cursor: pointer;
-  transition: background-color 0s ease;
+  transition: all 0.3s ease;
   border: none;
 }
 
 .signup-button:hover {
-  background-color: rgb(31, 118, 189);
+  background: rgb(113, 236, 255);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 213, 255, 0.3);
 }
 
-.signup-button:active {
+/* .signup-button:active {
   background-color: rgb(102, 176, 237);
-}
+} */
 
-.signup-input:focus,
+/* .signup-input:focus,
 .signup-button:focus {
   outline: 2px solid rgb(26, 142, 236);
   outline-offset: 2px;
-}
+} */

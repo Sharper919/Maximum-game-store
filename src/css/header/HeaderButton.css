@@ -7,15 +7,19 @@
   cursor: pointer;
   height: 40px;
   width: 100px;
-  transition: background-color 0s ease;
+  transition: all 0.3s ease;
 }
 
 .btn.primary:hover {
-    background-color: #67f0ff;
+    background: rgb(113, 236, 255);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 213, 255, 0.3);
 }
 
 .btn.default:hover {
     background-color: rgb(175, 175, 175);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(175, 175, 175, 0.3);
 }
 
 .btn.default {
