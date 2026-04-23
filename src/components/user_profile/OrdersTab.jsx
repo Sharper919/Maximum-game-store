@@ -14,6 +14,21 @@ export default function OrdersTab() {
           <td>$59.99</td>
           <td>Paid</td>
         </tr>
+        <tr>
+          <td>2026-04-01</td>
+          <td>$59.99</td>
+          <td>Paid</td>
+        </tr>
+        <tr>
+          <td>2026-04-01</td>
+          <td>$59.99</td>
+          <td>Paid</td>
+        </tr>
+        <tr>
+          <td>2026-04-01</td>
+          <td>$59.99</td>
+          <td>Paid</td>
+        </tr>
       </tbody>
     </table>
   );
