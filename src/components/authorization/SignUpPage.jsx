@@ -36,7 +36,6 @@ export default function SignUpPage() {
 
             const data = await res.json();
 
-            // 🔐 одразу логінимо
             localStorage.setItem('token', data.token);
             localStorage.setItem('userName', data.userName);
 
