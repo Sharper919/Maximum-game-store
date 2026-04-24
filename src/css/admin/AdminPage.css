@@ -1,0 +1,147 @@
+.admin-container {
+    display: flex;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 120px 20px 40px;
+    gap: 30px;
+    min-height: calc(100vh - 105px);
+}
+
+/* Sidebar */
+
+.sidebar {
+    width: 240px;
+    min-width: 220px;
+    max-width: 260px;
+    padding: 25px 20px;
+    border-radius: 16px;
+    height: fit-content;
+    background-color: rgba(38, 38, 38, 1);
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+.sidebar li:hover {
+    background-color: rgba(0, 213, 255, 0.1);
+    color: rgb(0, 213, 255);
+}
+
+.sidebar li.active {
+    background-color: rgba(0, 213, 255, 0.2);
+    color: rgb(0, 213, 255);
+    border-left: 3px solid rgb(0, 213, 255);
+    padding-left: 12px;
+}
+
+/* Content Area */
+
+.admin-content {
+    flex: 1;
+}
+
+.dashboard {
+    display: flex;
+    gap: 20px;
+}
+
+.stat-card {
+    flex: 1;
+    background: #262626;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+/* Table */
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.admin-table th {
+    background-color: rgba(38, 38, 38, 1);
+    padding: 15px;
+    text-align: left;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid rgb(0, 213, 255);
+    color: rgb(0, 213, 255);
+}
+
+.admin-table td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(100, 100, 100, 0.2);
+    font-size: 15px;
+    color: rgba(200, 200, 200, 1);
+}
+
+.admin-table tr:hover {
+    background-color: rgba(38, 38, 38, 0.5);
+}
+
+.admin-table td img {
+    width: 80px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Buttons */
+
+button {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(0, 213, 255);
+    color: black;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: rgb(113, 236, 255);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 213, 255, 0.3);
+}
+
+button:active {
+    background-color: #00a9bc;
+}
+
+button.danger {
+    background-color: #e53935;
+    color: white;
+}
+
+button.danger:hover {
+    background-color: #ff6b6b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(229, 57, 53, 0.3);
+}
+
+button.danger:active {
+    background-color: #b71c1c;
+}
+
+.add-btn {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-right: 15px;
+}

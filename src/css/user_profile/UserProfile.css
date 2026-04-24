@@ -252,6 +252,12 @@ button.danger {
 
 button.danger:hover {
     background-color: #ff6b6b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(229, 57, 53, 0.3);
+}
+
+button.danger:active {
+    background-color: #b71c1c;
 }
 
 /* Inputs */
