@@ -4,6 +4,7 @@ import '../../css/header/Header.css';
 import MenuIcon from './MenuIcon';
 import HeaderInput from './HeaderInput';
 import HeaderButton from './HeaderButton';
+import CartIcon from './CartIcon';
 
 class Header extends React.Component {
     handleLogout = () => {
@@ -29,7 +30,7 @@ class Header extends React.Component {
                 <HeaderInput />
 
                 <div className="right-section">
-                    <HeaderButton text='Cart' type='default' navigateTo="/cart" />
+                    <CartIcon />
 
                     {!userName && showButtons && (
                         <>
