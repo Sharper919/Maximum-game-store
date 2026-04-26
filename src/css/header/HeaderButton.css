@@ -11,15 +11,23 @@
 }
 
 .btn.primary:hover {
-    background: rgb(113, 236, 255);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 213, 255, 0.3);
+  background: rgb(113, 236, 255);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 213, 255, 0.3);
 }
 
 .btn.default:hover {
-    background-color: rgb(175, 175, 175);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(175, 175, 175, 0.3);
+  background-color: rgb(175, 175, 175);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(175, 175, 175, 0.3);
+}
+
+.btn.default:active {
+  background-color: #a0a0a0;
+}
+
+.btn.primary:active {
+  background-color: #00a9bc;
 }
 
 .btn.default {

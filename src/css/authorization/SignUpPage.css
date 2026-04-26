@@ -89,6 +89,10 @@
   box-shadow: 0 6px 20px rgba(0, 213, 255, 0.3);
 }
 
+.signup-button:active {
+  background-color: #00a9bc;
+}
+
 /* .signup-button:active {
   background-color: rgb(102, 176, 237);
 } */

@@ -68,7 +68,11 @@ h1 {
 }
 
 .checkout-button:hover {
-    background-color: rgb(0, 180, 220);
+    background-color: rgb(113, 236, 255);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 213, 255, 0.4);
+    box-shadow: 0 4px 16px rgba(0, 213, 255, 0.3);
+}
+
+.checkout-button:active {
+    background-color: #00a9bc;
 }

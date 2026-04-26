@@ -257,7 +257,7 @@ button.danger:hover {
 }
 
 button.danger:active {
-    background-color: #b71c1c;
+    background-color: rgb(180, 30, 30);
 }
 
 /* Inputs */
