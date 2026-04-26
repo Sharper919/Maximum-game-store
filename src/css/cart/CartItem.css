@@ -46,7 +46,7 @@
     background-color: rgba(50, 50, 50, 1);
     border: 2px solid rgba(100, 100, 100, 1);
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.1s ease;
     flex-shrink: 0;
 }
 

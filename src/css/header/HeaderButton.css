@@ -7,7 +7,7 @@
   cursor: pointer;
   height: 40px;
   width: 100px;
-  transition: all 0.3s ease;
+  transition: all 0.1s ease;
 }
 
 .btn.primary:hover {
