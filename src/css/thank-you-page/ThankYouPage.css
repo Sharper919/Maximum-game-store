@@ -97,7 +97,7 @@
     border-radius: 20px;
     font-size: 15px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.1s ease;
 }
 
 .thankyou-actions button:hover {
