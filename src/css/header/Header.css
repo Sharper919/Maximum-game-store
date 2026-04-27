@@ -40,6 +40,7 @@
 .right-section {
   display: flex;
   gap: 25px;
+  align-items: center;
 }
 
 .user-block {
