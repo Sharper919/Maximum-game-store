@@ -5,19 +5,19 @@ import MenuIcon from './MenuIcon';
 import HeaderInput from './HeaderInput';
 import HeaderButton from './HeaderButton';
 import CartIcon from './CartIcon';
+import UserIcon from './UserIcon';
 
 class Header extends React.Component {
-    handleLogout = () => {
-        localStorage.removeItem('token');
-        localStorage.removeItem('userName');
-        window.location.href = '/';
-    };
+    // handleLogout = () => {
+    //     localStorage.removeItem('token');
+    //     localStorage.removeItem('userName');
+    //     window.location.href = '/';
+    // };
 
     render() {
         const { showButtons } = this.props;
 
         const userName = localStorage.getItem('userName');
-        const firstLetter = userName ? userName.charAt(0).toUpperCase() : null;
 
         return (
             <header className='header'>
@@ -40,12 +40,7 @@ class Header extends React.Component {
                     )}
 
                     {userName && (
-                        <div className="user-block">
-                            <div className="user-avatar">
-                                {firstLetter}
-                            </div>
-                            <button className="logout-btn" onClick={this.handleLogout}>Logout</button>
-                        </div>
+                        <UserIcon userName={userName} />
                     )}
                 </div>
             </header>
