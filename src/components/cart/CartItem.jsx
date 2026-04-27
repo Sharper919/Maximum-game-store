@@ -1,13 +1,13 @@
 import '../../css/cart/CartItem.css';
 import React from 'react';
 
-export default function CartItem({ imgSrc, title, price }) {
+export default function CartItem({ imgSrc, title, price, onRemove }) {
     return (
         <div className="cart-item">
             <img src={imgSrc} alt={title} />
             <h3>{title}</h3>
             <p>Price: UAH {price}</p>
-            <button className="remove-button">Remove</button>
+            <button className="remove-button" onClick={onRemove}>Remove</button>
         </div>
     );
 }

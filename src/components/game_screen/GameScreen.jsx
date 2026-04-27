@@ -13,6 +13,21 @@ function GameScreen() {
     const [images, setImages] = useState([]);
     const [requirements, setRequirements] = useState([]);
 
+    const addToCart = async () => {
+    try {
+        await fetch(`${BASE_URL}/api/cart/add/${id}`, {
+            method: 'POST',
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+        });
+
+        alert('Added to cart');
+    } catch (err) {
+        console.error(err);
+    }
+};
+
     useEffect(() => {
         fetch(`${BASE_URL}/api/games/${id}/info`)
             .then(res => res.json())
@@ -71,7 +86,9 @@ function GameScreen() {
                                 <span id='buy-game-content-price'><span>Price:</span> UAH {game.price}</span>
                                 <div className="button-block">
                                     <button id="button-buy-now">Buy now</button>
-                                    <button id="add-to-basket">Add to cart</button>
+                                    <button id="add-to-basket" onClick={addToCart}>
+                                        Add to cart
+                                    </button>
                                 </div>
                             </div>
                         </div>

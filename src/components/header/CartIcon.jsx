@@ -4,9 +4,7 @@ export default function CartIcon() {
     const navigate = useNavigate()
 
     const handleClick = () => {
-        if ('/cart') {
-            navigate('/cart');
-        }
+        navigate('/cart');
     };
 
     return (
