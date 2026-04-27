@@ -9,7 +9,7 @@
 }
 
 /* Sidebar */
-.sidebar {
+.profile-container .sidebar {
     width: 240px;
     min-width: 220px;
     max-width: 260px;
@@ -19,20 +19,20 @@
     background-color: rgba(38, 38, 38, 1);
 }
 
-.sidebar h2 {
+.profile-container .sidebar h2 {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 25px;
     color: white;
 }
 
-.sidebar ul {
+.profile-container .sidebar ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.sidebar li {
+.profile-container .sidebar li {
     padding: 12px 15px;
     margin-bottom: 8px;
     border-radius: 8px;
@@ -41,12 +41,12 @@
     font-size: 16px;
 }
 
-.sidebar li:hover {
+.profile-container .sidebar li:hover {
     background-color: rgba(0, 213, 255, 0.1);
     color: rgb(0, 213, 255);
 }
 
-.sidebar li.active {
+.profile-container .sidebar li.active {
     background-color: rgba(0, 213, 255, 0.2);
     color: rgb(0, 213, 255);
     border-left: 3px solid rgb(0, 213, 255);
@@ -163,7 +163,7 @@
     gap: 25px;
 }
 
-.game-card {
+.profile-container .game-card {
     background: rgba(38, 38, 38, 1);
     padding: 15px;
     border-radius: 15px;
@@ -173,12 +173,12 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.game-card:hover {
+.profile-container .game-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 40px rgba(0, 213, 255, 0.2);
 }
 
-.game-card img {
+.profile-container .game-card img {
     width: 100%;
     height: 200px;
     border-radius: 10px;
@@ -186,7 +186,7 @@
     margin-bottom: 12px;
 }
 
-.game-card h4 {
+.profile-container .game-card h4 {
     font-size: 16px;
     font-weight: 600;
     margin: 10px 0;
@@ -194,13 +194,13 @@
 }
 
 /* Orders Table */
-.orders-table {
+.profile-container .orders-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
 
-.orders-table th {
+.profile-container .orders-table th {
     background-color: rgba(38, 38, 38, 1);
     padding: 15px;
     text-align: left;
@@ -210,19 +210,19 @@
     color: rgb(0, 213, 255);
 }
 
-.orders-table td {
+.profile-container .orders-table td {
     padding: 15px;
     border-bottom: 1px solid rgba(100, 100, 100, 0.2);
     font-size: 15px;
     color: rgba(200, 200, 200, 1);
 }
 
-.orders-table tr:hover {
+.profile-container .orders-table tr:hover {
     background-color: rgba(38, 38, 38, 0.5);
 }
 
 /* Buttons */
-button {
+.profile-container button {
     margin-top: 15px;
     padding: 10px 24px;
     border: none;
@@ -235,33 +235,33 @@ button {
     transition: all 0.1s ease;
 }
 
-button:hover {
+.profile-container button:hover {
     background-color: rgb(113, 236, 255);
     transform: translateY(-2px);
     box-shadow: 0 4px 16px rgba(0, 213, 255, 0.3);
 }
 
-button:active {
+.profile-container button:active {
     background-color: #00a9bc;
 }
 
-button.danger {
+.profile-container button.danger {
     background-color: #e53935;
     color: white;
 }
 
-button.danger:hover {
+.profile-container button.danger:hover {
     background-color: #ff6b6b;
     transform: translateY(-2px);
     box-shadow: 0 4px 16px rgba(229, 57, 53, 0.3);
 }
 
-button.danger:active {
+.profile-container button.danger:active {
     background-color: rgb(180, 30, 30);
 }
 
 /* Inputs */
-input {
+.profile-container input {
     padding: 12px 15px;
     margin-top: 15px;
     margin-bottom: 10px;
@@ -273,18 +273,18 @@ input {
     transition: border-color 0.3s ease;
 }
 
-input::placeholder {
+.profile-container input::placeholder {
     color: rgba(150, 150, 150, 1);
 }
 
-input:focus {
+.profile-container input:focus {
     outline: none;
     border-color: rgb(0, 213, 255);
     box-shadow: 0 0 8px rgba(0, 213, 255, 0.3);
 }
 
 /* Games List (rows) */
-.games-list {
+.profile-container .games {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -292,7 +292,7 @@ input:focus {
 }
 
 /* Row */
-.game-row {
+.profile-container .game-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -303,13 +303,13 @@ input:focus {
     transition: all 0.3s ease;
 }
 
-.game-row:hover {
+.profile-container .game-row:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 30px rgba(0, 213, 255, 0.15);
 }
 
 /* Image */
-.game-row img {
+.profile-container .game-row img {
     width: 80px;
     height: 100px;
     object-fit: cover;
@@ -317,24 +317,24 @@ input:focus {
 }
 
 /* Info */
-.game-info {
+.profile-container .game-info {
     flex: 1;
     margin-left: 20px;
 }
 
-.game-info h3 {
+.profile-container .game-info h3 {
     margin: 0;
     font-size: 18px;
 }
 
-.game-info p {
+.profile-container .game-info p {
     margin-top: 5px;
     font-size: 14px;
     color: rgba(180, 180, 180, 1);
 }
 
 /* Actions */
-.game-actions {
+.profile-container .game-actions {
     display: flex;
     gap: 10px;
 }
@@ -342,7 +342,7 @@ input:focus {
 
 /* Settings */
 
-.settings {
+.profile-container .settings {
     display: flex;
     flex-direction: column;
     gap: 20px;

@@ -6,10 +6,15 @@ import OrdersTab from './OrdersTab';
 import SettingsTab from './SettingsTab';
 // import Header from '../header/Header';
 
-const tabs = ['Profile', 'My Games', 'Orders', 'Settings'];
+const tabs = [
+  { key: 'profile', label: 'Profile' },
+  { key: 'my_games', label: 'My Games' },
+  { key: 'orders', label: 'Orders' },
+  { key: 'settings', label: 'Settings' }
+];
 
 export default function UserProfilePage() {
-  const [activeTab, setActiveTab] = useState('Profile');
+  const [activeTab, setActiveTab] = useState('profile');
 
   return (
     <div className="profile-container">
@@ -18,21 +23,21 @@ export default function UserProfilePage() {
         <ul>
           {tabs.map(tab => (
             <li
-              key={tab}
-              className={activeTab === tab ? 'active' : ''}
-              onClick={() => setActiveTab(tab)}
+              key={tab.key}
+              className={activeTab === tab.key ? 'active' : ''}
+              onClick={() => setActiveTab(tab.key)}
             >
-              {tab}
+              {tab.label}
             </li>
           ))}
         </ul>
       </aside>
 
       <main className="content">
-        {activeTab === 'Profile' && <ProfileTab />}
-        {activeTab === 'My Games' && <GamesTab />}
-        {activeTab === 'Orders' && <OrdersTab />}
-        {activeTab === 'Settings' && <SettingsTab />}
+        {activeTab === 'profile' && <ProfileTab />}
+        {activeTab === 'my_games' && <GamesTab />}
+        {activeTab === 'orders' && <OrdersTab />}
+        {activeTab === 'settings' && <SettingsTab />}
       </main>
     </div>
   );
