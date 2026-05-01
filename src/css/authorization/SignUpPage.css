@@ -40,13 +40,8 @@
   margin-left: 20px;
 }
 
-
-
-
 .signup-input {
   padding: 10px;
-  /* border: none; */
-  /* border-radius: 30px; */
   font-size: 17px;
   height: 30px;
   margin-bottom: 25px;
@@ -66,11 +61,6 @@
 .signup-input:last-of-type {
   margin-bottom: 60px;
 }
-
-
-
-
-
 
 .signup-button {
   background: rgb(0, 213, 255);
@@ -92,16 +82,6 @@
 .signup-button:active {
   background-color: #00a9bc;
 }
-
-/* .signup-button:active {
-  background-color: rgb(102, 176, 237);
-} */
-
-/* .signup-input:focus,
-.signup-button:focus {
-  outline: 2px solid rgb(26, 142, 236);
-  outline-offset: 2px;
-} */
 
 .auth-error {
     color: rgb(255, 120, 120);
