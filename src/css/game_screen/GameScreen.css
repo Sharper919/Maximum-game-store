@@ -92,6 +92,20 @@ h1 {
     gap: 20px;
 }
 
+.purchase-message,
+.purchase-error {
+    margin: 14px 0 0;
+    font-size: 14px;
+}
+
+.purchase-message {
+    color: rgb(0, 213, 255);
+}
+
+.purchase-error {
+    color: rgb(255, 120, 120);
+}
+
 .about-this-game-content {
     display: flex;
     flex-direction: column;

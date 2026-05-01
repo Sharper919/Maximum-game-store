@@ -70,6 +70,10 @@
     box-shadow: 0 0 8px rgba(0, 213, 255, 0.3);
 }
 
+.checkout-input:disabled {
+    opacity: 0.7;
+}
+
 /* Button */
 .checkout-button {
     width: 100%;
@@ -94,6 +98,13 @@
     background: rgb(113, 236, 255);
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0, 213, 255, 0.3);
+}
+
+.checkout-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
 }
 
 /* Right - Details */
@@ -127,9 +138,37 @@
 
 .details-item {
     display: flex;
+    gap: 16px;
+    align-items: center;
     justify-content: space-between;
     font-size: 15px;
     color: rgba(200, 200, 200, 1);
+}
+
+.details-game {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.details-game img {
+    width: 42px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.checkout-error {
+    color: rgb(255, 120, 120);
+    background-color: rgba(255, 120, 120, 0.08);
+    border: 1px solid rgba(255, 120, 120, 0.25);
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin-bottom: 14px;
+}
+
+.checkout-message {
+    color: rgba(180, 180, 180, 1);
 }
 
 /* Divider */

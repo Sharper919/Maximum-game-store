@@ -76,3 +76,27 @@ h1 {
 .checkout-button:active {
     background-color: #00a9bc;
 }
+
+.checkout-button:disabled,
+.remove-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.cart-message,
+.cart-empty,
+.cart-error {
+    background-color: rgba(38, 38, 38, 1);
+    border-radius: 20px;
+    padding: 25px;
+}
+
+.cart-error {
+    color: rgb(255, 120, 120);
+    margin-bottom: 20px;
+}
+
+.cart-empty {
+    max-width: 420px;
+}

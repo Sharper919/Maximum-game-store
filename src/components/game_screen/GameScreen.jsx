@@ -2,31 +2,48 @@ import React from 'react';
 import '../../css/game_screen/GameScreen.css';
 import Header from '../header/Header';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-
-const BASE_URL = 'https://localhost:7151';
+import { useNavigate, useParams } from 'react-router-dom';
+import { apiFetch, BASE_URL, isAuthenticated } from '../../api/client';
 
 function GameScreen() {
     const { id } = useParams();
+    const navigate = useNavigate();
 
     const [game, setGame] = useState(null);
     const [images, setImages] = useState([]);
     const [requirements, setRequirements] = useState([]);
+    const [purchaseError, setPurchaseError] = useState('');
+    const [purchaseMessage, setPurchaseMessage] = useState('');
 
     const addToCart = async () => {
-    try {
-        await fetch(`${BASE_URL}/api/cart/add/${id}`, {
-            method: 'POST',
-            headers: {
-                Authorization: `Bearer ${localStorage.getItem('token')}`
-            }
-        });
+        if (!isAuthenticated()) {
+            navigate('/signin');
+            return;
+        }
 
-        alert('Added to cart');
-    } catch (err) {
-        console.error(err);
-    }
-};
+        try {
+            setPurchaseError('');
+            const result = await apiFetch(`/api/cart/add/${id}`, { method: 'POST' });
+            setPurchaseMessage(result.message || 'Added to cart');
+        } catch (err) {
+            if (err.status === 401) {
+                navigate('/signin');
+                return;
+            }
+
+            setPurchaseError(err.message || 'Failed to add game to cart');
+            setPurchaseMessage('');
+        }
+    };
+
+    const buyNow = () => {
+        if (!isAuthenticated()) {
+            navigate('/signin');
+            return;
+        }
+
+        navigate(`/checkout?gameId=${id}`);
+    };
 
     useEffect(() => {
         fetch(`${BASE_URL}/api/games/${id}/info`)
@@ -85,11 +102,13 @@ function GameScreen() {
                             <div className="buy-game-content">
                                 <span id='buy-game-content-price'><span>Price:</span> UAH {game.price}</span>
                                 <div className="button-block">
-                                    <button id="button-buy-now">Buy now</button>
+                                    <button id="button-buy-now" onClick={buyNow}>Buy now</button>
                                     <button id="add-to-basket" onClick={addToCart}>
                                         Add to cart
                                     </button>
                                 </div>
+                                {purchaseMessage && <p className="purchase-message">{purchaseMessage}</p>}
+                                {purchaseError && <p className="purchase-error">{purchaseError}</p>}
                             </div>
                         </div>
 

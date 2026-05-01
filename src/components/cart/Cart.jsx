@@ -1,70 +1,71 @@
 import '../../css/cart/Cart.css';
-import React from 'react';
+import { useCallback, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from '../header/Header';
 import CartItem from './CartItem';
-import assassin from '../../images/assassin.avif';
-import stalker2 from '../../images/stalker2.png';
-
-const BASE_URL = 'https://localhost:7151';
+import { apiFetch, BASE_URL, isAuthenticated } from '../../api/client';
 
 export default function Cart() {
+    const navigate = useNavigate();
     const [cart, setCart] = useState(null);
+    const [error, setError] = useState('');
+    const [isLoading, setIsLoading] = useState(true);
+    const [isUpdating, setIsUpdating] = useState(false);
 
-    const token = localStorage.getItem('token');
+    const loadCart = useCallback(async () => {
+        if (!isAuthenticated()) {
+            navigate('/signin');
+            return;
+        }
 
-    // 🔹 Завантаження кошика
-    const loadCart = async () => {
         try {
-            const res = await fetch(`${BASE_URL}/api/cart`, {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
-            });
-
-            const data = await res.json();
+            setIsLoading(true);
+            setError('');
+            const data = await apiFetch('/api/cart');
             setCart(data);
         } catch (err) {
-            console.error(err);
+            if (err.status === 401) {
+                navigate('/signin');
+                return;
+            }
+
+            setError(err.message || 'Failed to load cart');
+        } finally {
+            setIsLoading(false);
         }
-    };
+    }, [navigate]);
 
     useEffect(() => {
         loadCart();
-    }, []);
+    }, [loadCart]);
 
-    // 🔹 Видалення гри
     const removeGame = async (gameId) => {
         try {
-            await fetch(`${BASE_URL}/api/cart/remove/${gameId}`, {
-                method: 'DELETE',
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
-            });
-
-            loadCart(); // перезавантажуємо кошик
+            setIsUpdating(true);
+            setError('');
+            await apiFetch(`/api/cart/remove/${gameId}`, { method: 'DELETE' });
+            await loadCart();
         } catch (err) {
-            console.error(err);
+            setError(err.message || 'Failed to remove game');
+        } finally {
+            setIsUpdating(false);
         }
     };
 
-    // 🔹 Очистка кошика
     const clearCart = async () => {
         try {
-            await fetch(`${BASE_URL}/api/cart/clear`, {
-                method: 'DELETE',
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
-            });
-
-            loadCart();
+            setIsUpdating(true);
+            setError('');
+            await apiFetch('/api/cart/clear', { method: 'DELETE' });
+            await loadCart();
         } catch (err) {
-            console.error(err);
+            setError(err.message || 'Failed to clear cart');
+        } finally {
+            setIsUpdating(false);
         }
     };
 
-    if (!cart) return <div>Loading...</div>;
+    const hasItems = cart?.cartItems?.length > 0;
 
     return (
         <div className="cart-screen">
@@ -73,37 +74,56 @@ export default function Cart() {
             <div className="cart-screen-main">
                 <h1>Shopping Cart</h1>
 
-                <div className="cart-screen-content">
+                {isLoading && <div className="cart-message">Loading...</div>}
+                {error && <div className="cart-error">{error}</div>}
 
-                    {/* 🔹 Список товарів */}
-                    <div className="cart-items">
-                        {cart.cartItems.map(item => (
-                            <CartItem
-                                key={item.gameId}
-                                imgSrc={`${BASE_URL}${item.image}`}
-                                title={item.title}
-                                price={item.price}
-                                onRemove={() => removeGame(item.gameId)}
-                            />
-                        ))}
-                    </div>
-
-                    {/* 🔹 Підсумок */}
-                    <div className="cart-total">
-                        <h3>
-                            Total: <span>UAH {cart.totalPrice}</span>
-                        </h3>
-
-                        <button className="checkout-button">
-                            Proceed to Checkout
-                        </button>
-
-                        <button className="checkout-button" onClick={clearCart}>
-                            Clear cart
+                {!isLoading && !hasItems && (
+                    <div className="cart-empty">
+                        <h3>Your cart is empty</h3>
+                        <button className="checkout-button" onClick={() => navigate('/')}>
+                            Back to Store
                         </button>
                     </div>
+                )}
 
-                </div>
+                {!isLoading && hasItems && (
+                    <div className="cart-screen-content">
+                        <div className="cart-items">
+                            {cart.cartItems.map(item => (
+                                <CartItem
+                                    key={item.gameId}
+                                    imgSrc={item.image ? `${BASE_URL}/${item.image}` : '/placeholder.png'}
+                                    title={item.title}
+                                    price={item.price}
+                                    onRemove={() => removeGame(item.gameId)}
+                                    disabled={isUpdating}
+                                />
+                            ))}
+                        </div>
+
+                        <div className="cart-total">
+                            <h3>
+                                Total: <span>UAH {cart.totalPrice}</span>
+                            </h3>
+
+                            <button
+                                className="checkout-button"
+                                onClick={() => navigate('/checkout')}
+                                disabled={isUpdating}
+                            >
+                                Proceed to Checkout
+                            </button>
+
+                            <button
+                                className="checkout-button"
+                                onClick={clearCart}
+                                disabled={isUpdating}
+                            >
+                                Clear cart
+                            </button>
+                        </div>
+                    </div>
+                )}
             </div>
         </div>
     );
