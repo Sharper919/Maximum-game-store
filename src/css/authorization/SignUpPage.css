@@ -102,3 +102,12 @@
   outline: 2px solid rgb(26, 142, 236);
   outline-offset: 2px;
 } */
+
+.auth-error {
+    color: rgb(255, 120, 120);
+    background-color: rgba(255, 120, 120, 0.08);
+    border: 1px solid rgba(255, 120, 120, 0.25);
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin-bottom: 14px;
+}

@@ -101,14 +101,14 @@ function GameScreen() {
                             <hr />
                             <div className="buy-game-content">
                                 <span id='buy-game-content-price'><span>Price:</span> UAH {game.price}</span>
+                                {purchaseMessage && <p className="purchase-message">{purchaseMessage}</p>}
+                                {purchaseError && <p className="purchase-error">{purchaseError}</p>}
                                 <div className="button-block">
                                     <button id="button-buy-now" onClick={buyNow}>Buy now</button>
                                     <button id="add-to-basket" onClick={addToCart}>
                                         Add to cart
                                     </button>
                                 </div>
-                                {purchaseMessage && <p className="purchase-message">{purchaseMessage}</p>}
-                                {purchaseError && <p className="purchase-error">{purchaseError}</p>}
                             </div>
                         </div>
 
