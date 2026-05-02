@@ -4,7 +4,7 @@ import ProfileTab from './ProfileTab';
 import GamesTab from './GamesTab';
 import OrdersTab from './OrdersTab';
 import SettingsTab from './SettingsTab';
-// import Header from '../header/Header';
+import Header from '../header/Header';
 
 const tabs = [
   { key: 'profile', label: 'Profile' },
@@ -17,28 +17,32 @@ export default function UserProfilePage() {
   const [activeTab, setActiveTab] = useState('profile');
 
   return (
-    <div className="profile-container">
-      <aside className="sidebar">
-        <h2>Account</h2>
-        <ul>
-          {tabs.map(tab => (
-            <li
-              key={tab.key}
-              className={activeTab === tab.key ? 'active' : ''}
-              onClick={() => setActiveTab(tab.key)}
-            >
-              {tab.label}
-            </li>
-          ))}
-        </ul>
-      </aside>
+    <div>
+      <Header />
+      <div className="profile-container">
+        <aside className="sidebar">
+          <h2>Account</h2>
+          <ul>
+            {tabs.map(tab => (
+              <li
+                key={tab.key}
+                className={activeTab === tab.key ? 'active' : ''}
+                onClick={() => setActiveTab(tab.key)}
+              >
+                {tab.label}
+              </li>
+            ))}
+            <button className="back-to-store-btn">Back to Store</button>
+          </ul>
+        </aside>
 
-      <main className="content">
-        {activeTab === 'profile' && <ProfileTab />}
-        {activeTab === 'my_games' && <GamesTab />}
-        {activeTab === 'orders' && <OrdersTab />}
-        {activeTab === 'settings' && <SettingsTab />}
-      </main>
+        <main className="content">
+          {activeTab === 'profile' && <ProfileTab />}
+          {activeTab === 'my_games' && <GamesTab />}
+          {activeTab === 'orders' && <OrdersTab />}
+          {activeTab === 'settings' && <SettingsTab />}
+        </main>
+      </div>
     </div>
   );
 }

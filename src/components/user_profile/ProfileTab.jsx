@@ -8,9 +8,11 @@ export default function ProfileTab() {
             <div className="user-info">
                 <h3>Username</h3>
                 <p>Email: user@email.com</p>
+                <p>Member since: 12.09.2023</p>
 
                 <div className="actions">
                     <button>Edit Profile</button>
+                    <button className="danger">Delete Account</button>
                 </div>
             </div>
         </div>

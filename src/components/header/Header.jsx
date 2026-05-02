@@ -15,8 +15,6 @@ class Header extends React.Component {
     // };
 
     render() {
-        const { showButtons } = this.props;
-
         const userName = localStorage.getItem('userName');
 
         return (
@@ -32,7 +30,7 @@ class Header extends React.Component {
                 <div className="right-section">
                     <CartIcon />
 
-                    {!userName && showButtons && (
+                    {!userName && (
                         <>
                             <HeaderButton text='sign in' navigateTo="/signin" />
                             <HeaderButton text='sign up' type='primary' navigateTo="/signup" />

@@ -83,7 +83,7 @@ function GameScreen() {
 
     return (
         <div className="game-screen">
-            <Header showButtons={false} />
+            <Header />
 
             <div className="game-screen-main">
 

@@ -25,7 +25,7 @@ function MainScreen() {
 
   return (
     <div id='main-screen'>
-      <Header showButtons={true} />
+      <Header />
       <img src={banner} alt="Games" className="banner-image" />
 
       <div className="games-section">
