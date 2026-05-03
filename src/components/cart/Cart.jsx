@@ -78,12 +78,15 @@ export default function Cart() {
                 {error && <div className="cart-error">{error}</div>}
 
                 {!isLoading && !hasItems && (
-                    <div className="cart-empty">
-                        <h3>Your cart is empty</h3>
-                        <button className="checkout-button" onClick={() => navigate('/')}>
-                            Back to Store
-                        </button>
+                    <div className="cart-empty-container">
+                        <div className="cart-empty">
+                            <h3>Your cart is empty</h3>
+                            <button className="checkout-button" onClick={() => navigate('/')}>
+                                Back to Store
+                            </button>
+                        </div>
                     </div>
+
                 )}
 
                 {!isLoading && hasItems && (

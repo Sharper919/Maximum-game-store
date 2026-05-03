@@ -12,6 +12,7 @@ export default function UserIcon({ userName }) {
     const handleLogout = () => {
         localStorage.removeItem('token');
         localStorage.removeItem('userName');
+        localStorage.removeItem('role');
         window.location.href = '/';
     };
 

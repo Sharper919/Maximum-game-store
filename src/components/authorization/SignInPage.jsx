@@ -36,6 +36,7 @@ export default function SignInPage() {
 
             localStorage.setItem('token', data.token);
             localStorage.setItem('userName', data.userName);
+            localStorage.setItem('role', data.role);
 
             navigate('/');
         } catch (err) {

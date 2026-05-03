@@ -21,8 +21,8 @@ class Header extends React.Component {
             <header className='header'>
                 <div className="left-section">
                     <MenuIcon />
-                    <img src={logo} alt="Logo" className="maximum-game-img" />
-                    <span className="store-name">Maximum Game Store</span>
+                    <img src={logo} onClick={() => window.location.href = '/'} alt="Logo" className="maximum-game-img" />
+                    <span className="store-name" onClick={() => window.location.href = '/'}>Maximum Game Store</span>
                 </div>
 
                 <HeaderInput />

@@ -30,9 +30,11 @@
 .store-name {
   font-size: 24px;
   font-weight: 600;
+  cursor: pointer;
 }
 
 .maximum-game-img {
+  cursor: pointer;
   height: 85px;
   width: 85px;
 }

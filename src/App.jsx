@@ -9,8 +9,8 @@ import UserProfilePage from './components/user_profile/UserProfilePage';
 import Cart from './components/cart/Cart';
 import CheckoutPage from './components/checkout/CheckoutPage';
 import ThankYouPage from './components/thank-you-page/ThankYouPage';
+import AdminPage from './components/admin/AdminPage';
 
-// import AdminPage from './components/admin/AdminPage';
 // import GameForm from './components/admin/GameForm'
 
 function App() {
@@ -26,10 +26,10 @@ function App() {
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/thank-you" element={<ThankYouPage />} />
           <Route path="/profile" element={<UserProfilePage />} />
+          <Route path="/admin" element={<AdminPage />} />
         </Routes>
       </Router>
       {/* <UserProfilePage /> */}
-      {/* <AdminPage /> */}
       {/* <GameForm /> */}
     </div>
   );

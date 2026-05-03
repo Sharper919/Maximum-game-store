@@ -38,6 +38,7 @@ export default function SignUpPage() {
 
             localStorage.setItem('token', data.token);
             localStorage.setItem('userName', data.userName);
+            localStorage.setItem('role', data.role);
 
             navigate('/');
         } catch (err) {

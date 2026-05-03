@@ -10,6 +10,8 @@
 
 /* Sidebar */
 .profile-container .sidebar {
+    position: sticky;
+    top: 120px;
     width: 240px;
     min-width: 220px;
     max-width: 260px;

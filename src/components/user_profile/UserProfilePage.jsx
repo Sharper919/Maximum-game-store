@@ -57,6 +57,7 @@ export default function UserProfilePage() {
   const handleAccountDeleted = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('userName');
+    localStorage.removeItem('role');
     navigate('/');
   };
 
@@ -79,6 +80,11 @@ export default function UserProfilePage() {
             <button className="back-to-store-btn" onClick={() => navigate('/')}>
               Back to Store
             </button>
+            {user?.role === 'Admin' && (
+              <button className="back-to-store-btn" onClick={() => navigate('/admin')}>
+                Admin Panel
+              </button>
+            )}
           </ul>
         </aside>
 

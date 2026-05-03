@@ -100,3 +100,8 @@ h1 {
 .cart-empty {
     max-width: 420px;
 }
+
+.cart-empty-container {
+    display: flex;
+    justify-content: center;
+}

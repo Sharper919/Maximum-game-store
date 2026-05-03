@@ -1,7 +1,12 @@
-export default function GamesTab() {
+import { BASE_URL } from '../../api/client';
+
+export default function GamesTab({ games, onDelete, disabled }) {
+    if (games.length === 0) {
+        return <div className="admin-message">No games found.</div>;
+    }
+
     return (
         <div>
-            <button className="add-btn">+ Add Game</button>
             <table className="admin-table">
                 <thead>
                     <tr>
@@ -10,26 +15,38 @@ export default function GamesTab() {
                         <th>Price</th>
                         <th>Release date</th>
                         <th></th>
-                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>
-                            <img src="https://placehold.co/100x120" alt="Game 1" />
-                        </td>
-                        <td>Game 1</td>
-                        <td>$20</td>
-                        <td>2023-01-01</td>
-                        <td>
-                            <button>Edit</button>
-                        </td>
-                        <td>
-                            <button className="danger">Delete</button>
-                        </td>
-                    </tr>
+                    {games.map(game => (
+                        <tr key={game.id}>
+                            <td>
+                                {game.mainImage ? (
+                                    <img src={`${BASE_URL}/${game.mainImage}`} alt={game.title} />
+                                ) : (
+                                    <div className="admin-image-placeholder">No image</div>
+                                )}
+                            </td>
+                            <td>{game.title}</td>
+                            <td>UAH {game.price}</td>
+                            <td>{formatDate(game.releaseDate)}</td>
+                            <td>
+                                <button
+                                    className="danger"
+                                    onClick={() => onDelete(game.id)}
+                                    disabled={disabled}
+                                >
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </div>
     );
+}
+
+function formatDate(date) {
+    return date ? new Date(date).toLocaleDateString() : '-';
 }
