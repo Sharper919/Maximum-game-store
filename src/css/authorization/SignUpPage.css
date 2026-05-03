@@ -91,3 +91,20 @@
     padding: 10px 12px;
     margin-bottom: 14px;
 }
+
+.signup-link {
+    margin-top: 20px;
+    font-size: 14px;
+    color: rgba(180, 180, 180, 1);
+}
+
+.signup-link span {
+    color: rgb(0, 213, 255);
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+
+.signup-link span:hover {
+    color: rgb(113, 236, 255);
+    text-decoration: underline;
+}

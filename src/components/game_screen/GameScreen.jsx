@@ -62,7 +62,7 @@ function GameScreen() {
             .catch(err => console.error(err));
     }, [id]);
 
-    if (!game) return <div>Loading...</div>;
+    if (!game) return <div className="loading">Loading...</div>;
 
     const mainImage = images.length > 0
         ? `${BASE_URL}/${images[0]}`

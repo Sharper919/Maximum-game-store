@@ -2,8 +2,6 @@ export default function GamesTab() {
     return (
         <div>
             <button className="add-btn">+ Add Game</button>
-            <button className="add-btn">+ Add Requirements</button>
-            <button className="add-btn">+ Add Images</button>
             <table className="admin-table">
                 <thead>
                     <tr>

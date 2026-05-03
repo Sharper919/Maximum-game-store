@@ -72,6 +72,10 @@ export default function SignInPage() {
                     {error && <div className="auth-error">{error}</div>}
 
                     <button type="button" className="signup-button" onClick={handleSignIn}>Sign In</button>
+
+                    <p className="signup-link">
+                        Don't have an account? <span onClick={() => navigate('/signup')}>Sign Up</span>
+                    </p>
                 </form>
             </div>
         </div>
