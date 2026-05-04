@@ -1,12 +1,11 @@
 import { BASE_URL } from '../../api/client';
 
-export default function GamesTab({ games, onDelete, disabled }) {
-    if (games.length === 0) {
-        return <div className="admin-message">No games found.</div>;
-    }
-
+export default function GamesTab({ games, onAdd, onDelete, disabled }) {
     return (
         <div>
+            <button className="add-btn" onClick={onAdd} disabled={disabled}>Add Game</button>
+            {games.length === 0 && <div className="admin-message">No games found.</div>}
+            {games.length > 0 && (
             <table className="admin-table">
                 <thead>
                     <tr>
@@ -43,6 +42,7 @@ export default function GamesTab({ games, onDelete, disabled }) {
                     ))}
                 </tbody>
             </table>
+            )}
         </div>
     );
 }

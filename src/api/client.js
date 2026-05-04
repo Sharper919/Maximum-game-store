@@ -10,8 +10,9 @@ export function isAuthenticated() {
 
 export async function apiFetch(path, options = {}) {
     const token = getToken();
+    const isFormData = typeof FormData !== 'undefined' && options.body instanceof FormData;
     const headers = {
-        ...(options.body ? { 'Content-Type': 'application/json' } : {}),
+        ...(options.body && !isFormData ? { 'Content-Type': 'application/json' } : {}),
         ...(token ? { Authorization: `Bearer ${token}` } : {}),
         ...options.headers
     };

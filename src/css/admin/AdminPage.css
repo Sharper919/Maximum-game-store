@@ -9,7 +9,7 @@
 
 /* Sidebar */
 
-.sidebar {
+.admin-container .sidebar {
     position: sticky;
     top: 120px;
     width: 240px;
@@ -21,13 +21,13 @@
     background-color: rgba(38, 38, 38, 1);
 }
 
-.sidebar ul {
+.admin-container .sidebar ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.sidebar li {
+.admin-container .sidebar li {
     padding: 12px 15px;
     margin-bottom: 8px;
     border-radius: 8px;
@@ -36,12 +36,12 @@
     font-size: 16px;
 }
 
-.sidebar li:hover {
+.admin-container .sidebar li:hover {
     background-color: rgba(0, 213, 255, 0.1);
     color: rgb(0, 213, 255);
 }
 
-.sidebar li.active {
+.admin-container .sidebar li.active {
     background-color: rgba(0, 213, 255, 0.2);
     color: rgb(0, 213, 255);
     border-left: 3px solid rgb(0, 213, 255);
@@ -118,7 +118,7 @@
 
 /* Buttons */
 
-button {
+.admin-container button {
     padding: 10px 24px;
     border: none;
     border-radius: 10px;
@@ -130,35 +130,35 @@ button {
     transition: all 0.1s ease;
 }
 
-button:hover {
+.admin-container button:hover {
     background-color: rgb(113, 236, 255);
     transform: translateY(-2px);
     box-shadow: 0 4px 16px rgba(0, 213, 255, 0.3);
 }
 
-button:active {
+.admin-container button:active {
     background-color: #00a9bc;
 }
 
-button:disabled {
+.admin-container button:disabled {
     opacity: 0.6;
     cursor: not-allowed;
     transform: none;
     box-shadow: none;
 }
 
-button.danger {
+.admin-container button.danger {
     background-color: #e53935;
     color: white;
 }
 
-button.danger:hover {
+.admin-container button.danger:hover {
     background-color: #ff6b6b;
     transform: translateY(-2px);
     box-shadow: 0 4px 16px rgba(229, 57, 53, 0.3);
 }
 
-button.danger:active {
+.admin-container button.danger:active {
     background-color: #b71c1c;
 }
 
