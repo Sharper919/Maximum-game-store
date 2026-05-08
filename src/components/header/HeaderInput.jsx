@@ -1,6 +1,5 @@
 import React from 'react';
 import '../../css/header/HeaderInput.css';
-import loupe from './loupe.png';
 
 
 const HeaderInput = ({ value = '', onChange, onSubmit }) => {
@@ -18,7 +17,9 @@ const HeaderInput = ({ value = '', onChange, onSubmit }) => {
         placeholder="Search..."
       />
       <button type="submit" aria-label="Search games">
-        <img src={loupe} alt="" />
+        <span class="material-symbols-outlined">
+          search
+        </span>
       </button>
     </form>
   );

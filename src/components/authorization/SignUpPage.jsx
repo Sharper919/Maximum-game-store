@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../../css/authorization/SignUpPage.css';
-import logo from '../header/maximum_game.png';
-
-const BASE_URL = 'https://localhost:7151';
+//import logo from '../header/maximum_game.png';
+import { BASE_URL } from '../../api/client';
 
 export default function SignUpPage() {
     const [userName, setUserName] = useState('');
@@ -50,7 +49,7 @@ export default function SignUpPage() {
         <div className="signup-container">
             <div className="signup-box">
                 <div className="logo-container">
-                    <img src={logo} alt="Logo" className="logo" />
+                    <img src={`${BASE_URL}/images/others/maximum_game.png`} alt="Logo" className="logo" />
                 </div>
 
                 <p className="title">Sign Up</p>

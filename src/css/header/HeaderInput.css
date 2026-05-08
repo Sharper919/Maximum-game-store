@@ -22,10 +22,6 @@
 #search-input button {
   background: none;
   border: none;
-  padding: 6px 6px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
 }
 
 #search-input button img {

@@ -1,10 +1,11 @@
 import '../../css/main-screen/MainScreen.css';
 import Header from '../header/Header';
 import GameComponent from './GameComponent'
-import banner from './igri.jpeg';
+//import banner from './igri.jpeg';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { apiFetch, BASE_URL } from '../../api/client';
+import Footer from '../footer/Footer';
 
 const featureConfigs = [
   { key: 'genres', label: 'Genre', path: '/api/admin/genres', queryKey: 'genreId' },
@@ -129,7 +130,7 @@ function MainScreen() {
         onSearchChange={handleSearchChange}
         onSearchSubmit={handleSearchSubmit}
       />
-      <img src={banner} alt="Games" className="banner-image" />
+      <img src={`${BASE_URL}/images/others/igri.jpeg`} alt="Games" className="banner-image" />
 
       <div className="filters-panel">
         {featureConfigs.map(config => (
@@ -176,6 +177,7 @@ function MainScreen() {
           />
         ))}
       </div>
+      <Footer />
     </div>
   );
 }

@@ -1,27 +1,20 @@
 import React from 'react';
-import logo from './maximum_game.png';
+// import logo from './maximum_game.png';
 import '../../css/header/Header.css';
-import MenuIcon from './MenuIcon';
 import HeaderInput from './HeaderInput';
 import HeaderButton from './HeaderButton';
 import CartIcon from './CartIcon';
 import UserIcon from './UserIcon';
+import { BASE_URL } from '../../api/client';
 
 class Header extends React.Component {
-    // handleLogout = () => {
-    //     localStorage.removeItem('token');
-    //     localStorage.removeItem('userName');
-    //     window.location.href = '/';
-    // };
-
     render() {
         const userName = localStorage.getItem('userName');
 
         return (
             <header className='header'>
                 <div className="left-section">
-                    <MenuIcon />
-                    <img src={logo} onClick={() => window.location.href = '/'} alt="Logo" className="maximum-game-img" />
+                    <img src={`${BASE_URL}/images/others/maximum_game.png`} onClick={() => window.location.href = '/'} alt="Logo" className="maximum-game-img" />
                     <span className="store-name" onClick={() => window.location.href = '/'}>Maximum Game Store</span>
                 </div>
 
