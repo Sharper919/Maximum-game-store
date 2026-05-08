@@ -5,7 +5,6 @@ import DashboardTab from './DashboardTab';
 import UsersTab from './UsersTab';
 import GamesTab from './GamesTab';
 import OrdersTab from './OrdersTab';
-import GameForm from './GameForm';
 import Header from '../header/Header';
 import { apiFetch, isAuthenticated } from '../../api/client';
 
@@ -26,7 +25,6 @@ export default function AdminPage() {
   const [message, setMessage] = useState('');
   const [isLoading, setIsLoading] = useState(true);
   const [isUpdating, setIsUpdating] = useState(false);
-  const [isGameFormOpen, setIsGameFormOpen] = useState(false);
 
   const loadAdminData = useCallback(async () => {
     if (!isAuthenticated()) {
@@ -140,7 +138,7 @@ export default function AdminPage() {
           {!isLoading && !error && activeTab === 'games' && (
             <GamesTab
               games={games}
-              onAdd={() => setIsGameFormOpen(true)}
+              onAdd={() => navigate('/admin/games/create')}
               onDelete={deleteGame}
               disabled={isUpdating}
             />
@@ -148,16 +146,6 @@ export default function AdminPage() {
           {!isLoading && !error && activeTab === 'orders' && <OrdersTab orders={orders} />}
         </main>
       </div>
-
-      <GameForm
-        isOpen={isGameFormOpen}
-        onClose={() => setIsGameFormOpen(false)}
-        onSaved={async () => {
-          setMessage('Game added.');
-          await loadAdminData();
-          setActiveTab('games');
-        }}
-      />
     </>
   );
 }

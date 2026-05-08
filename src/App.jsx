@@ -10,8 +10,7 @@ import Cart from './components/cart/Cart';
 import CheckoutPage from './components/checkout/CheckoutPage';
 import ThankYouPage from './components/thank-you-page/ThankYouPage';
 import AdminPage from './components/admin/AdminPage';
-
-// import GameForm from './components/admin/GameForm'
+import GameForm from './components/admin/GameForm';
 
 function App() {
   return (
@@ -27,10 +26,10 @@ function App() {
           <Route path="/thank-you" element={<ThankYouPage />} />
           <Route path="/profile" element={<UserProfilePage />} />
           <Route path="/admin" element={<AdminPage />} />
+          <Route path="/admin/games/create" element={<GameForm />} />
         </Routes>
       </Router>
       {/* <UserProfilePage /> */}
-      {/* <GameForm /> */}
     </div>
   );
 }

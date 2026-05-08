@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import FeatureSelect from './FeatureSelect';
 import RequirementBlock from './RequirementBlock';
 import { apiFetch } from '../../api/client';
@@ -38,6 +39,7 @@ const emptyForm = {
 };
 
 export default function GameForm({ isOpen = true, onClose, onSave, onSaved }) {
+    const navigate = useNavigate();
     const [form, setForm] = useState(emptyForm);
     const [options, setOptions] = useState({
         genres: [],
@@ -255,8 +257,7 @@ export default function GameForm({ isOpen = true, onClose, onSave, onSaved }) {
 
             onSave?.(gameId);
             onSaved?.(gameId);
-            resetForm();
-            onClose?.();
+            closeForm();
         } catch (err) {
             setError(err.message || 'Failed to save game');
         } finally {
@@ -285,17 +286,19 @@ export default function GameForm({ isOpen = true, onClose, onSave, onSaved }) {
     };
 
     const uploadImages = async (gameId) => {
-        for (const [index, image] of images.entries()) {
-            const formData = new FormData();
-            formData.append('gameId', gameId);
-            formData.append('image', image.file);
-            formData.append('isMain', String(index === mainImageIndex));
-
-            await apiFetch('/api/admin/game-images', {
-                method: 'POST',
-                body: formData
-            });
+        if (images.length === 0) {
+            return;
         }
+
+        const formData = new FormData();
+        formData.append('gameId', gameId);
+        formData.append('mainImageIndex', String(mainImageIndex ?? 0));
+        images.forEach(image => formData.append('images', image.file));
+
+        await apiFetch('/api/admin/game-images', {
+            method: 'POST',
+            body: formData
+        });
     };
 
     const resetForm = () => {
@@ -310,12 +313,17 @@ export default function GameForm({ isOpen = true, onClose, onSave, onSaved }) {
 
     const closeForm = () => {
         resetForm();
-        onClose?.();
+        if (onClose) {
+            onClose();
+            return;
+        }
+
+        navigate('/admin');
     };
 
     return (
-        <div className="modal-overlay">
-            <div className="modal">
+        <div className="game-form-page">
+            <div className="game-form-panel">
                 <div className="modal-header">
                     <h2>Add Game</h2>
                     <button type="button" className="modal-close" onClick={closeForm} aria-label="Close">

@@ -19,7 +19,7 @@ export default function FeatureSelect({ config, options, value, newValue, disabl
                     placeholder={`New ${config.label.toLowerCase()}`}
                     disabled={disabled}
                 />
-                <button type="button" onClick={onAdd} disabled={disabled || !newValue.trim()}>
+                <button className="add-feature-button" type="button" onClick={onAdd} disabled={disabled || !newValue.trim()}>
                     Add
                 </button>
             </div>
