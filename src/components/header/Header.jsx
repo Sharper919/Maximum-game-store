@@ -25,7 +25,11 @@ class Header extends React.Component {
                     <span className="store-name" onClick={() => window.location.href = '/'}>Maximum Game Store</span>
                 </div>
 
-                <HeaderInput />
+                <HeaderInput
+                    value={this.props.searchValue}
+                    onChange={this.props.onSearchChange}
+                    onSubmit={this.props.onSearchSubmit}
+                />
 
                 <div className="right-section">
                     <CartIcon />

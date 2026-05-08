@@ -29,7 +29,6 @@ function App() {
           <Route path="/admin/games/create" element={<GameForm />} />
         </Routes>
       </Router>
-      {/* <UserProfilePage /> */}
     </div>
   );
 }
