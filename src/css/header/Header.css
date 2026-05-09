@@ -25,7 +25,7 @@
   display: flex;
   align-items: center;
   gap: 25px;
-  margin-left: 40px;
+  margin-left: 30px;
 }
 
 .store-name {
@@ -44,12 +44,13 @@
   display: flex;
   gap: 25px;
   align-items: center;
+  margin-right: 30px;
 }
 
 .user-block {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 10px;
 }
 
 .user-avatar {
@@ -64,18 +65,38 @@
   font-size: 18px;
   color: rgb(0, 0, 0);
   cursor: pointer;
+  border: none;
+  padding: 0;
 }
 
-.logout-btn {
+.user-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 180px;
+  padding: 6px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: #1f1f1f;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  z-index: 1100;
+}
+
+.user-menu button {
+  width: 100%;
+  display: block;
+  text-align: left;
   background: transparent;
-  border: 1px solid white;
+  border: none;
   color: white;
-  padding: 5px 10px;
+  padding: 10px 12px;
   cursor: pointer;
   border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
 }
 
-.logout-btn:hover {
-  background-color: white;
-  color: black;
+.user-menu button:hover {
+  background-color: rgba(0, 213, 255, 0.16);
+  color: rgb(113, 236, 255);
 }

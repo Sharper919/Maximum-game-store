@@ -1,12 +1,31 @@
 import { useNavigate } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
 
 export default function UserIcon({ userName }) {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const [isOpen, setIsOpen] = useState(false);
+    const menuRef = useRef(null);
+    const role = localStorage.getItem('role');
 
     const firstLetter = userName ? userName.charAt(0).toUpperCase() : null;
 
-    const handleClick = () => {
-        navigate('/profile');
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (menuRef.current && !menuRef.current.contains(event.target)) {
+                setIsOpen(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
+
+    const goTo = (path) => {
+        setIsOpen(false);
+        navigate(path);
     };
 
     const handleLogout = () => {
@@ -17,13 +36,34 @@ export default function UserIcon({ userName }) {
     };
 
     return (
-        <div className="user-block">
-            <div className="user-avatar" onClick={handleClick}>
+        <div className="user-block" ref={menuRef}>
+            <button
+                type="button"
+                className="user-avatar"
+                onClick={() => setIsOpen(prev => !prev)}
+                aria-expanded={isOpen}
+                aria-haspopup="menu"
+            >
                 {firstLetter}
-            </div>
-            <button className="logout-btn" onClick={handleLogout}>
-                Logout
             </button>
+
+            {isOpen && (
+                <div className="user-menu" role="menu">
+                    <button type="button" role="menuitem" onClick={() => goTo('/profile')}>
+                        User Cabinet
+                    </button>
+
+                    {role === 'Admin' && (
+                        <button type="button" role="menuitem" onClick={() => goTo('/admin')}>
+                            Admin Panel
+                        </button>
+                    )}
+
+                    <button type="button" role="menuitem" onClick={handleLogout}>
+                        Logout
+                    </button>
+                </div>
+            )}
         </div>
     );
 }
