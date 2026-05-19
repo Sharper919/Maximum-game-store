@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../../css/admin/AdminPage.css';
-import DashboardTab from './DashboardTab';
 import UsersTab from './UsersTab';
 import GamesTab from './GamesTab';
 import OrdersTab from './OrdersTab';
@@ -9,7 +8,6 @@ import Header from '../header/Header';
 import { apiFetch, isAuthenticated } from '../../api/client';
 
 const tabs = [
-  { key: 'dashboard', label: 'Dashboard' },
   { key: 'users', label: 'Users' },
   { key: 'games', label: 'Games' },
   { key: 'orders', label: 'Orders' }
@@ -17,7 +15,7 @@ const tabs = [
 
 export default function AdminPage() {
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState('dashboard');
+  const [activeTab, setActiveTab] = useState('users');
   const [users, setUsers] = useState([]);
   const [games, setGames] = useState([]);
   const [orders, setOrders] = useState([]);
@@ -129,9 +127,6 @@ export default function AdminPage() {
           {message && <div className="admin-success">{message}</div>}
           {error && <div className="admin-error">{error}</div>}
 
-          {!isLoading && !error && activeTab === 'dashboard' && (
-            <DashboardTab users={users} games={games} orders={orders} />
-          )}
           {!isLoading && !error && activeTab === 'users' && (
             <UsersTab users={users} onBlock={blockUser} disabled={isUpdating} />
           )}

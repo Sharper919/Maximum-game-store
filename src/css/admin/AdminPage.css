@@ -54,19 +54,6 @@
     flex: 1;
 }
 
-.dashboard {
-    display: flex;
-    gap: 20px;
-}
-
-.stat-card {
-    flex: 1;
-    background: #262626;
-    padding: 20px;
-    border-radius: 12px;
-    text-align: center;
-}
-
 /* Table */
 
 .admin-table {
