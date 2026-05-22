@@ -126,6 +126,7 @@ function MainScreen() {
   return (
     <div id='main-screen'>
       <Header
+        showSearch={true}
         searchValue={search}
         onSearchChange={handleSearchChange}
         onSearchSubmit={handleSearchSubmit}
