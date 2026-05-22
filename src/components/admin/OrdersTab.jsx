@@ -17,7 +17,7 @@ export default function OrdersTab({ orders }) {
       <tbody>
         {orders.map(order => (
           <tr key={order.orderId}>
-            <td>#{order.orderId}</td>
+            <td>{order.orderId}</td>
             <td>{order.userName}</td>
             <td>UAH {order.price}</td>
             <td>{formatDate(order.date)}</td>
