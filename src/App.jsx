@@ -1,14 +1,14 @@
 import './App.css';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import MainScreen from './components/main-screen/MainScreen';
+import MainScreen from './components/main_screen/MainScreen';
 import SignUpPage from './components/authorization/SignUpPage';
 import SignInPage from './components/authorization/SignInPage';
 import GameScreen from './components/game_screen/GameScreen';
 import UserProfilePage from './components/user_profile/UserProfilePage';
 import Cart from './components/cart/Cart';
 import CheckoutPage from './components/checkout/CheckoutPage';
-import ThankYouPage from './components/thank-you-page/ThankYouPage';
+import ThankYouPage from './components/thank_you_page/ThankYouPage';
 import AdminPage from './components/admin/AdminPage';
 import GameForm from './components/admin/GameForm';
 
