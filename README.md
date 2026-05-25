@@ -1,70 +1,185 @@
-# Getting Started with Create React App
+# Maximum Game Store Client
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Клієнтська частина вебзастосунку **Maximum Game Store** - це React-застосунок для вебмагазину комп'ютерних ігор. Інтерфейс забезпечує перегляд каталогу ігор, пошук, перегляд сторінки гри, реєстрацію та вхід користувача, роботу з кошиком, оформлення замовлень, особистий кабінет і доступ до адміністративної панелі.
 
-## Available Scripts
+## Технологічний стек
 
-In the project directory, you can run:
+- JavaScript
+- React 19.1.0
+- React DOM
+- React Router DOM
+- HTML5
+- CSS3
+- Create React App / React Scripts
+- NPM
 
-### `npm start`
+## Системні вимоги
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Для запуску клієнтської частини необхідно встановити:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Node.js
+- NPM 10.9.2 або новіший
+- Git
+- Visual Studio Code або інший редактор коду
 
-### `npm test`
+Для повноцінної роботи клієнтської частини також має бути запущена серверна частина **Maximum Game Store API** на ASP.NET Core Web API.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Розгортання проєкту
 
-### `npm run build`
+### 1. Клонування репозиторію
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+git clone <repository-url>
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 2. Перехід до папки клієнтської частини
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+cd "Client/Maximum game store"
+```
 
-### `npm run eject`
+### 3. Встановлення залежностей
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npm install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Ця команда встановлює всі залежності, описані у файлі `package.json`, зокрема React, React DOM, React Router DOM та React Scripts.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 4. Налаштування адреси API
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Базова адреса серверної частини вказана у файлі:
 
-## Learn More
+```text
+src/api/client.js
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+За замовчуванням використовується локальна адреса:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```javascript
+export const BASE_URL = 'https://localhost:7151';
+```
 
-### Code Splitting
+Якщо серверна частина розгорнута на іншій адресі, потрібно змінити значення `BASE_URL` на адресу робочого API.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Приклад:
 
-### Analyzing the Bundle Size
+```javascript
+export const BASE_URL = 'https://your-api-domain.com';
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 5. Запуск у режимі розробки
 
-### Making a Progressive Web App
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Після запуску застосунок буде доступний у браузері за адресою:
 
-### Advanced Configuration
+```text
+http://localhost:3000
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+У режимі розробки сторінка автоматично оновлюється після внесення змін у код.
 
-### Deployment
+### 6. Збірка для production
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```bash
+npm run build
+```
 
-### `npm run build` fails to minify
+Після виконання команди буде створена папка:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```text
+build
+```
+
+У ній міститься оптимізована production-версія клієнтського застосунку зі статичними HTML, CSS та JavaScript-файлами.
+
+### 7. Розміщення production-збірки
+
+Папку `build` можна розмістити на вебсервері або хостингу, який підтримує віддачу статичних файлів. Для перевірки production-збірки локально можна використати пакет `serve`:
+
+```bash
+npm install -g serve
+serve -s build
+```
+
+Після цього застосунок буде доступний за адресою, вказаною в консолі.
+
+## Основні маршрути клієнтської частини
+
+```text
+/                     Головна сторінка з каталогом ігор
+/signup               Реєстрація користувача
+/signin               Вхід користувача
+/game/:id             Сторінка детального перегляду гри
+/cart                 Кошик користувача
+/checkout             Оформлення замовлення
+/thank-you            Сторінка подяки після оформлення замовлення
+/profile              Особистий кабінет користувача
+/admin                Адміністративна панель
+/admin/games/create   Форма додавання гри
+```
+
+## Авторизація
+
+Після успішного входу сервер повертає JWT-токен, ім'я користувача та його роль. Ці дані зберігаються в `localStorage`:
+
+```text
+token
+userName
+role
+```
+
+JWT-токен автоматично додається до захищених API-запитів у заголовку `Authorization` через функцію `apiFetch`.
+
+Формат заголовка:
+
+```http
+Authorization: Bearer <token>
+```
+
+Якщо користувач має роль `Admin`, у меню користувача відображається перехід до адміністративної панелі.
+
+## Основні компоненти
+
+Клієнтська частина структурована за функціональними модулями у папці `src/components`:
+
+- `main-screen` - головна сторінка та картки ігор;
+- `game_screen` - сторінка детального перегляду гри;
+- `authorization` - сторінки входу та реєстрації;
+- `cart` - кошик та елементи кошика;
+- `checkout` - оформлення замовлення;
+- `user_profile` - особистий кабінет користувача;
+- `admin` - адміністративна панель і форма додавання гри;
+- `header` - верхня навігаційна панель;
+- `footer` - нижня частина сторінки.
+
+## Доступні NPM-скрипти
+
+### Запуск застосунку
+
+```bash
+npm start
+```
+
+### Збірка production-версії
+
+```bash
+npm run build
+```
+
+### Запуск тестів
+
+```bash
+npm test
+```
+
+## Примітки
+
+- Перед запуском клієнтської частини потрібно переконатися, що серверна частина API працює.
+- У разі зміни адреси backend-сервера потрібно оновити `BASE_URL` у файлі `src/api/client.js`.
+- Для коректної роботи авторизованих запитів сервер має повертати JWT-токен після входу користувача.
+- Адміністративні сторінки доступні лише користувачам із роллю `Admin`.
+- Production-збірка створюється у папці `build` і може бути розміщена на будь-якому хостингу статичних файлів.
