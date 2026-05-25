@@ -1,4 +1,3 @@
-/* Profile Container & Layout */
 .profile-container {
     display: flex;
     gap: 30px;
@@ -8,7 +7,6 @@
     padding: 120px 200px 40px;
 }
 
-/* Sidebar */
 .profile-container .sidebar {
     position: sticky;
     top: 120px;
@@ -55,16 +53,11 @@
     padding-left: 12px;
 }
 
-/* Content Area */
 .content {
     flex: 1;
     min-width: 0;
-    /* padding: 40px;
-    display: flex;
-    max-width: 800px; */
 }
 
-/* Profile Card */
 .profile-card {
     display: flex;
     align-items: center;
@@ -79,7 +72,6 @@
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* Avatar */
 .avatar {
     flex-shrink: 0;
     width: 150px;
@@ -108,7 +100,6 @@
     font-weight: 700;
 }
 
-/* User Info */
 .user-info {
     display: flex;
     flex-direction: column;
@@ -126,7 +117,6 @@
     font-size: 15px;
 }
 
-/* Actions */
 .actions {
     display: flex;
     gap: 10px;
@@ -134,7 +124,6 @@
     margin-top: 10px;
 }
 
-/* Grid - Games Display */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -171,7 +160,6 @@
     color: white;
 }
 
-/* Orders Table */
 .profile-container .orders-table {
     width: 100%;
     border-collapse: collapse;
@@ -199,7 +187,6 @@
     background-color: rgba(38, 38, 38, 0.5);
 }
 
-/* Buttons */
 .profile-container button {
     margin-top: 15px;
     padding: 10px 24px;
@@ -250,7 +237,6 @@
     width: 100%;
 }
 
-/* Inputs */
 .profile-container input {
     padding: 12px 15px;
     margin-top: 15px;
@@ -273,7 +259,6 @@
     box-shadow: 0 0 8px rgba(0, 213, 255, 0.3);
 }
 
-/* Games List (rows) */
 .profile-container .games {
     display: flex;
     flex-direction: column;
@@ -281,7 +266,6 @@
     width: 100%;
 }
 
-/* Row */
 .profile-container .game-row {
     display: flex;
     align-items: center;
@@ -298,7 +282,6 @@
     box-shadow: 0 8px 30px rgba(0, 213, 255, 0.15);
 }
 
-/* Image */
 .profile-container .game-row img {
     width: 80px;
     height: 100px;
@@ -320,7 +303,6 @@
     flex-shrink: 0;
 }
 
-/* Info */
 .profile-container .game-info {
     flex: 1;
     margin-left: 20px;
@@ -337,14 +319,10 @@
     color: rgba(180, 180, 180, 1);
 }
 
-/* Actions */
 .profile-container .game-actions {
     display: flex;
     gap: 10px;
 }
-
-
-/* Settings */
 
 .profile-container .settings {
     display: flex;
@@ -380,7 +358,6 @@
     border-color: rgba(0, 213, 255, 0.25);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .profile-container {
         flex-direction: column;

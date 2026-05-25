@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../../css/authorization/SignUpPage.css';
-//import logo from '../header/maximum_game.png';
 import { BASE_URL } from '../../api/client';
 
 export default function SignInPage() {

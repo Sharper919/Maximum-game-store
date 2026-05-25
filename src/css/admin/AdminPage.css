@@ -7,8 +7,6 @@
     min-height: calc(100vh - 105px);
 }
 
-/* Sidebar */
-
 .admin-container .sidebar {
     position: sticky;
     top: 120px;
@@ -48,13 +46,9 @@
     padding-left: 12px;
 }
 
-/* Content Area */
-
 .admin-content {
     flex: 1;
 }
-
-/* Table */
 
 .admin-table {
     width: 100%;
@@ -102,8 +96,6 @@
     text-align: center;
     font-size: 13px;
 }
-
-/* Buttons */
 
 .admin-container button {
     padding: 10px 24px;

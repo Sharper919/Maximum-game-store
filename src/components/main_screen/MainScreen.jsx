@@ -1,7 +1,6 @@
 import '../../css/main-screen/MainScreen.css';
 import Header from '../header/Header';
 import GameComponent from './GameComponent'
-//import banner from './igri.jpeg';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { apiFetch, BASE_URL } from '../../api/client';

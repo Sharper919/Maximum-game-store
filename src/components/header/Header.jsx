@@ -1,5 +1,4 @@
 import React from 'react';
-// import logo from './maximum_game.png';
 import '../../css/header/Header.css';
 import HeaderInput from './HeaderInput';
 import HeaderButton from './HeaderButton';

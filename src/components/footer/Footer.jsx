@@ -6,13 +6,11 @@ export default function Footer() {
         <footer className="footer">
             <div className="footer-container">
 
-                {/* 🔹 Ліва частина */}
                 <div className="footer-section">
                     <h3>Maximum Game Store</h3>
                     <p>Your ultimate destination for PC games.</p>
                 </div>
 
-                {/* 🔹 Навігація */}
                 <div className="footer-section">
                     <h4>Navigation</h4>
                     <ul>
@@ -22,7 +20,6 @@ export default function Footer() {
                     </ul>
                 </div>
 
-                {/* 🔹 Legal */}
                 <div className="footer-section">
                     <h4>Legal</h4>
                     <ul>
@@ -31,7 +28,6 @@ export default function Footer() {
                     </ul>
                 </div>
 
-                {/* 🔹 Контакти */}
                 <div className="footer-section">
                     <h4>Contact</h4>
                     <ul>
@@ -42,7 +38,6 @@ export default function Footer() {
 
             </div>
 
-            {/* 🔻 Нижня частина */}
             <div className="footer-bottom">
                 © {new Date().getFullYear()} Maximum Game Store. All rights reserved.
             </div>

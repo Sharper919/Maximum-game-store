@@ -7,7 +7,6 @@
     max-width: 230px;
     height: auto;
     border-radius: 30px;
-    /* margin: 20px 0px; */
     background-color: rgb(26, 26, 26);
     padding: 15px;
     box-sizing: border-box;
@@ -20,10 +19,6 @@
     color: black;
     cursor: pointer;
 }
-
-/*.game-component:active {
-    transform: scale(1.0);
-}*/
 
 @keyframes pop {
     0% {
@@ -44,9 +39,8 @@
 
 .game-image {
     width: 100%;
-    aspect-ratio: 3 / 4; /* адаптивна висота */
+    aspect-ratio: 3 / 4;
     overflow: hidden;
-    /* border-radius: 50px; */
 }
 
 .game-image img {
@@ -68,5 +62,4 @@
     font-weight: 400;
     font-size: 14px;
     margin-top: auto;
-    /* margin-left: 20px; */
 }
